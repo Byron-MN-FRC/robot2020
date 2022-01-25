@@ -107,6 +107,15 @@ public void JoystickDrive(Joystick joystickP0) {
   //  DifferentialDrive.arcadeDriveIK(Math.pow(y, 5), Math.pow(twist, 5), false);
     differentialDrive.arcadeDrive(-Math.pow(twist, 5),Math.pow(y, 5));
 }
+    public void driveFroward(){
+        rightMaster.set(.3);
+        leftMaster.set(.3); 
+    }
+    public void stop(){
+        rightMaster.set(0.0);
+        leftMaster.set(0.0);
+    }
+       
 // public void motorConfigFalcon() {
 //     // Factory default all motors initially
 //     rightMaster.configFactory Default();
