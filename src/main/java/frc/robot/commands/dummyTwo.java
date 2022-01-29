@@ -39,6 +39,9 @@ public class dummyTwo extends SequentialCommandGroup {
         //      )    
         //  );
 
+        new driveForward(3, 0.4, drive).withTimeout(5),
+        new turn(90, 0.3, drive)
+
         );
     }
 
