@@ -28,5 +28,47 @@ public class Constants {
     *   public static final int kRightMotor2Port = 3; 
     * }
     */ 
-}
+    // Drive Train constants
+    public static final boolean kEnableCurrentLimiting_DT = true;
+    // public final static double kAmpLimit_DT = 12; public static final String kAmpLimitName_DT = "DriveTrain/Amp Limit";
+    // public final static double kAmpPeak_DT = 15; public static final String kAmpPeakLimitName_DT = "DriveTrain/Amp Peak Limit";
+    public final static double kAmpLimit_DT = 40; public static final String kAmpLimitName_DT = "test/drive/Amp Limit";
+    public final static double kAmpPeak_DT = 60; public static final String kAmpPeakLimitName_DT = "test/drive/Amp Peak Limit";
+
+    public static final double kthreshholdTime = 0;
+ 
+    // Pixy constants
+    //public final static boolean pixyOnDashboard = true;
+    //public final static boolean pixyDebug = true;
+    //public final static boolean pixyLogTimes = true;
+
+    public static final double encodeUnitsToFeet = -22684.24;//Real robot
+
+    public final static int kTimeoutMs = 30;
+
+    public final static Gains kGains_Distanc = new Gains(0.1, 0.0, 0.0, 0.0, 100, 0.50);
+    public final static Gains kGains_Turning = new Gains(.95, 0.001, 0.0, 0.0, 0, 0.4);
+    public final static Gains kGains_Velocit = new Gains(0.1, 0.0, 20.0, 1023.0 / 6800.0, 300, 0.50);
+    public final static Gains kGains_MotProf = new Gains(1.0, 0.0, 0.0, 1023.0 / 6800.0, 400, 1.00);
+    public static final Gains kGains = new Gains(0.2, 0.001, 0.0, 0.2, 0, 1.0);
+    public static final int kPIDLoopIdx = 0; // Check how it is done with talon
+
+    public final static int kPigeonUnitsPerRotation = 8192;
+
+    public final static double kNeutralDeadband = 0.001;
+
+    public final static int PID_PRIMARY = 0;
+    public final static int PID_TURN = 1;
+
+    public final static int SLOT_0 = 0;
+    public final static int SLOT_1 = 1;
+    public final static int SLOT_2 = 2;
+    public final static int SLOT_3 = 3;
+
+    public final static int kSlot_Distanc = SLOT_0;
+    public final static int kSlot_Turning = SLOT_1;
+    public final static int kSlot_Velocit = SLOT_2;
+    public final static int kSlot_MotProf = SLOT_3; 
+
+ }
 
