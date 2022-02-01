@@ -40,7 +40,7 @@ public class dummyTwo extends SequentialCommandGroup {
         //  );
 
         // new driveForward(3, 0.4, drive).withTimeout(5)
-       new driveForward(-10,drive),
+       new driveForward(-2,drive),
        new turn(90,drive)
 
         );

@@ -39,7 +39,7 @@ public class dummyOne extends SequentialCommandGroup {
         //      )    
         //  );
 
-        new driveForward(-10, drive).withTimeout(5)
+        new driveForward(-2, drive).withTimeout(5)
 
         );
     }
