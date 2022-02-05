@@ -74,7 +74,7 @@ public class driveForward extends CommandBase {
     @Override
     public boolean isFinished() {
         double m_encoderUnits = Constants.encodeUnitsToFeet * m_distanceInFeet;
-        return (m_drive.atTarget(m_encoderUnits));   
+        return(m_drive.atTarget(m_encoderUnits));   
     }
 
     @Override
