@@ -12,11 +12,10 @@
 
 package frc.robot;
 
-import edu.wpi.first.hal.FRCNetComm.tInstances;
-import edu.wpi.first.hal.FRCNetComm.tResourceType;
-
 import com.revrobotics.ColorSensorV3;
 
+import edu.wpi.first.hal.FRCNetComm.tInstances;
+import edu.wpi.first.hal.FRCNetComm.tResourceType;
 import edu.wpi.first.hal.HAL;
 import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -123,6 +122,10 @@ public class Robot extends TimedRobot {
         if (m_autonomousCommand != null) {
             m_autonomousCommand.cancel();
         }
+        double color = SmartDashboard.getNumber("initial chase color", 1);
+            RobotContainer.getInstance().m_drive.chaseColor = (int)color;
+            
+        
     }
 
     /**
