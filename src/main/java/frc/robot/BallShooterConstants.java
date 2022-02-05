@@ -1,3 +1,6 @@
+/**
+ * Simple class containing constants used throughout project
+ */
 package frc.robot;
 import java.util.TreeMap;
 
@@ -7,7 +10,7 @@ public class BallShooterConstants {
 	public final static double kHoodPositionTolerance = 50;
 	
 	// Shoot motor Constants
-	public final static double kshootOneRPMTolerance = 2000;//sensor units
+	public final static double kShootMotorRPMTolerance = 2000;//sensor units
 	public static final boolean kEnableCurrentLimiting_BS = true;
 
 	// Current (amp) limit
@@ -34,10 +37,10 @@ public class BallShooterConstants {
 //	public static final Gains kGains_hoodMotor = new  Gains(0.7, 0.00001, 0.0, .14, 0, 0);
 	public static final Gains kGains_hoodMotor = new  Gains(0.9, 0.0002, 0.0, .99, 0, 0);
 	// 10/9/21 public static final Gains kGains_hoodMotor = new  Gains(0.9, 0.00005, 0.0, .99, 0, 0);
-	//public static final Gains kGains_shootOne = new Gains(0.149600029, 0.00001, 1.4956, 0.04760003, 500, 1.0);
-	// 9/16/21 public static final Gains kGains_shootOne =   new Gains(0.149600029, 0.000015, 0, 0.049, 0, 0);
-	// 10/9/21 public static final Gains kGains_shootOne =   new Gains(0.1, 0.0005, 0, 0.062, 0, 0);
-	public static final Gains kGains_shootOne =   new Gains(0.065, 0.00001, 0, 0.048, 0, 0);
+	//public static final Gains kGains_shootMotor = new Gains(0.149600029, 0.00001, 1.4956, 0.04760003, 500, 1.0);
+	// 9/16/21 public static final Gains kGains_shootMotor =   new Gains(0.149600029, 0.000015, 0, 0.049, 0, 0);
+	// 10/9/21 public static final Gains kGains_shootMotor =   new Gains(0.1, 0.0005, 0, 0.062, 0, 0);
+	public static final Gains kGains_shootMotor =   new Gains(0.065, 0.00001, 0, 0.048, 0, 0);
 
 
 	/**
@@ -76,7 +79,7 @@ public class BallShooterConstants {
 		put(0, new double[] { -3800, -7000});
 		put(450, new double[] { -4000, -5500});
 		put(250, new double[] { -4250, -5000});
-		put(150, new double[] { -4400, -4250});
+		put(150, new double[] { -4600, -4250});
 		put(130, new double[] { -5250, -3650});
 		put(100, new double[] { -5500, -4300});
 		put(60, new double[] { -5980, -4200});

@@ -1,35 +1,30 @@
 {
   "HALProvider": {
+    "DIO": {
+      "window": {
+        "visible": true
+      }
+    },
     "Other Devices": {
-      "Talon SRX[5]": {
+      "Talon FX[13]": {
         "header": {
           "open": true
         }
       },
-      "Talon SRX[5]/Analog In": {
+      "Talon SRX[12]": {
         "header": {
           "open": true
         }
       },
-      "Talon SRX[5]/Fwd Limit": {
+      "Talon SRX[14]": {
         "header": {
           "open": true
         }
-      },
-      "Talon SRX[5]/Pulse Width Input": {
-        "header": {
-          "open": true
-        }
-      },
-      "Talon SRX[5]/Quad Encoder": {
-        "header": {
-          "open": true
-        }
-      },
-      "Talon SRX[5]/Rev Limit": {
-        "header": {
-          "open": true
-        }
+      }
+    },
+    "PWM Outputs": {
+      "window": {
+        "visible": true
       }
     }
   },
@@ -38,7 +33,10 @@
       "/FMSInfo": "FMSInfo",
       "/LiveWindow/BallAcquisition": "Subsystem",
       "/LiveWindow/BallIndexer": "Subsystem",
+      "/LiveWindow/BallIndexer/bottomSensor": "Digital Input",
+      "/LiveWindow/BallIndexer/topSensor": "Digital Input",
       "/LiveWindow/BallShooter": "Subsystem",
+      "/LiveWindow/Drive": "Subsystem",
       "/LiveWindow/Drive/differentialDrive": "DifferentialDrive",
       "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
       "/SmartDashboard/Auto Mode": "String Chooser",
@@ -49,12 +47,17 @@
       "/SmartDashboard/btnEnableClimbTwo": "Command",
       "/SmartDashboard/btnEnableLimelight": "Command",
       "/SmartDashboard/btnFindBall": "Command",
+      "/SmartDashboard/btnIndexer": "Command",
       "/SmartDashboard/btnMagazineDown": "Command",
       "/SmartDashboard/btnMagazineUp": "Command",
       "/SmartDashboard/btnRetractIntake": "Command",
       "/SmartDashboard/btnRetractIntakeTwo": "Command",
       "/SmartDashboard/btnReverseAcquire": "Command",
-      "/SmartDashboard/btnShoot": "Command"
+      "/SmartDashboard/btnShoot": "Command",
+      "/SmartDashboard/runIndexer": "Command"
     }
+  },
+  "NetworkTables View": {
+    "visible": false
   }
 }
