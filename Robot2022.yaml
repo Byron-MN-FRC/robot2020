@@ -105,7 +105,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '5'
+          value: '13'
       Base: Talon FX
       Name: shootOne
     - Children: []
@@ -118,6 +118,18 @@ Children:
           value: '6'
       Base: Talon FX
       Name: shootTwo
+    - Children: []
+      Properties:
+        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id004 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+            '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22',
+            '23', '24', '25', '26', '27', '28', '29', '30', '31']
+          default: '2'
+          name: CAN ID
+          validators: &id005 [CANID]
+          value: '15'
+      Base: Talon SRX
+      Name: gateMotor
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: false}
@@ -153,7 +165,17 @@ Children:
         value: *id003
     Base: Subsystem
     Name: BallIndexer
-  - Children: []
+  - Children:
+    - Children: []
+      Properties:
+        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id004
+          default: '2'
+          name: CAN ID
+          validators: *id005
+          value: '5'
+      Base: Talon SRX
+      Name: acquireMotor
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: false}
@@ -188,7 +210,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id004 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+          choices: &id006 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
             '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23',
             '24', '25', '26', '27', '28', '29', '30', '31', '32']
           default: '1'
@@ -199,14 +221,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: &id005 [TypeDropdownSelected]
+          validators: &id007 [TypeDropdownSelected]
           value: alexaFindBall
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id006 [whenPressed, whenReleased, whileHeld, whenHeld, toggleWhenPressed,
+          choices: &id008 [whenPressed, whenReleased, whileHeld, whenHeld, toggleWhenPressed,
             cancelWhenPressed]
           default: whenPressed
           name: When to Run
@@ -226,7 +248,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -235,14 +257,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: reverseAcquire
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -261,7 +283,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -270,14 +292,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: acquire
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -296,7 +318,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -305,14 +327,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: retractAcquisition
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -331,7 +353,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -340,14 +362,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: deployAcquisition
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -366,7 +388,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -375,14 +397,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: enableClimb
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -391,10 +413,10 @@ Children:
       Name: btnEnableClimb
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id007 ['0', '1', '2', '3', '4', '5']
+        choices: &id009 ['0', '1', '2', '3', '4', '5']
         default: 1
         name: Number
-        validators: &id008 [Joystick]
+        validators: &id010 [Joystick]
         value: '0'
     Base: Joystick
     Name: operatorOne
@@ -411,7 +433,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -420,14 +442,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: shoot
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -446,7 +468,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -455,14 +477,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: enableLimelight
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -481,7 +503,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -490,14 +512,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: manualMagazineDown
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -516,7 +538,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -525,14 +547,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: manualMagazineUp
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -551,7 +573,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -560,14 +582,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: retractAcquisition
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -586,7 +608,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -595,14 +617,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: deployAcquisition
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -621,7 +643,7 @@ Children:
           validators: null
           value: []
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -630,14 +652,14 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: enableClimb
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
           name: Add Timeout, validators: null, value: false}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whenPressed
           name: When to Run
           validators: null
@@ -646,10 +668,10 @@ Children:
       Name: btnEnableClimbTwo
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id007
+        choices: *id009
         default: 1
         name: Number
-        validators: *id008
+        validators: *id010
         value: '1'
     Base: Joystick
     Name: operatorTwo
