@@ -154,12 +154,12 @@ btnRetractIntake.whenPressed(new retractAcquisition() ,true);
     SmartDashboard.putData("btnRetractIntake",new retractAcquisition() );
 
 final JoystickButton btnAcquire = new JoystickButton(operatorOne, 5);        
-btnAcquire.whileHeld(new acquire( m_drive ) ,false);
-    SmartDashboard.putData("btnAcquire",new acquire( m_drive ) );
+btnAcquire.whileHeld(new acquire( m_ballAcquisition ) ,false);
+    SmartDashboard.putData("btnAcquire",new acquire( m_ballAcquisition ) );
 
 final JoystickButton btnReverseAcquire = new JoystickButton(operatorOne, 3);        
-btnReverseAcquire.whileHeld(new reverseAcquire( m_drive ) ,true);
-    SmartDashboard.putData("btnReverseAcquire",new reverseAcquire( m_drive ) );
+btnReverseAcquire.whileHeld(new reverseAcquire( m_ballAcquisition ) ,true);
+    SmartDashboard.putData("btnReverseAcquire",new reverseAcquire( m_ballAcquisition ) );
 
 final JoystickButton btnFindBall = new JoystickButton(operatorOne, 1);        
 btnFindBall.whileHeld(new alexaFindBall( m_drive ) ,true);

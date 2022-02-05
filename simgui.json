@@ -1,0 +1,60 @@
+{
+  "HALProvider": {
+    "Other Devices": {
+      "Talon SRX[5]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon SRX[5]/Analog In": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon SRX[5]/Fwd Limit": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon SRX[5]/Pulse Width Input": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon SRX[5]/Quad Encoder": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon SRX[5]/Rev Limit": {
+        "header": {
+          "open": true
+        }
+      }
+    }
+  },
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/LiveWindow/BallAcquisition": "Subsystem",
+      "/LiveWindow/BallIndexer": "Subsystem",
+      "/LiveWindow/BallShooter": "Subsystem",
+      "/LiveWindow/Drive/differentialDrive": "DifferentialDrive",
+      "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/SmartDashboard/Auto Mode": "String Chooser",
+      "/SmartDashboard/btnAcquire": "Command",
+      "/SmartDashboard/btnDeployIntake": "Command",
+      "/SmartDashboard/btnDeployIntakeTwo": "Command",
+      "/SmartDashboard/btnEnableClimb": "Command",
+      "/SmartDashboard/btnEnableClimbTwo": "Command",
+      "/SmartDashboard/btnEnableLimelight": "Command",
+      "/SmartDashboard/btnFindBall": "Command",
+      "/SmartDashboard/btnMagazineDown": "Command",
+      "/SmartDashboard/btnMagazineUp": "Command",
+      "/SmartDashboard/btnRetractIntake": "Command",
+      "/SmartDashboard/btnRetractIntakeTwo": "Command",
+      "/SmartDashboard/btnReverseAcquire": "Command",
+      "/SmartDashboard/btnShoot": "Command"
+    }
+  }
+}
