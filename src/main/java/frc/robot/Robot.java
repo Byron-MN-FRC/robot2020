@@ -41,7 +41,18 @@ public class Robot extends TimedRobot {
         // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
         // autonomous chooser on the dashboard.
         m_robotContainer = RobotContainer.getInstance();
+        //m_robotContainer.m_ballShooter.teleopWithIdle = false;
         HAL.report(tResourceType.kResourceType_Framework, tInstances.kFramework_RobotBuilder);
+        // m_robotContainer.m_ballAcquisition.retractSolenoid();
+        // server = CameraServer.getInstance();
+        // server.startAutomaticCapture("forward",0);
+        //SmartDashboard.putData("drive/Auto mode", chooser);
+        LimelightUtility.EnableDriverCamera(true);
+        LimelightUtility.StreamingMode(LimelightUtility.StreamMode.Standard);
+    //    SmartDashboard.putString(Constants.autoPosition, "L");
+        LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
+        //m_robotContainer.m_ballShooter.zeroOutHood();
+     //   SmartDashboard.putBoolean("HoodUp", false);
     }
 
     /**
@@ -66,6 +77,7 @@ public class Robot extends TimedRobot {
     */
     @Override
     public void disabledInit() {
+        LimelightUtility.EnableDriverCamera(false);
     }
 
     @Override
