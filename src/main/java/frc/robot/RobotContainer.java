@@ -28,7 +28,7 @@ import frc.robot.commands.driveWithJoystick;
 import frc.robot.commands.dummyOne;
 import frc.robot.commands.dummyTwo;
 import frc.robot.commands.enableClimb;
-import frc.robot.commands.enableLimelight;
+import frc.robot.commands.enableLimeLight;
 import frc.robot.commands.manualMagazineDown;
 import frc.robot.commands.manualMagazineUp;
 import frc.robot.commands.retractAcquisition;
@@ -140,8 +140,8 @@ btnMagazineDown.whileHeld(new manualMagazineDown() ,true);
     SmartDashboard.putData("btnMagazineDown",new manualMagazineDown() );
 
 final JoystickButton btnEnableLimelight = new JoystickButton(operatorTwo, 2);        
-btnEnableLimelight.whenPressed(new enableLimelight( m_drive ) ,true);
-    SmartDashboard.putData("btnEnableLimelight",new enableLimelight( m_drive ) );
+btnEnableLimelight.whenPressed(new enableLimeLight( m_drive ) ,true);
+    SmartDashboard.putData("btnEnableLimelight",new enableLimeLight( m_drive ) );
 
 final JoystickButton btnShoot = new JoystickButton(operatorTwo, 1);        
 btnShoot.whileHeld(new shoot( m_ballShooter ) ,true);
