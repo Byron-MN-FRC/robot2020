@@ -1,6 +1,12 @@
 package frc.robot;
 
-import edu.wpi.first.networktables.*;
+import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.cscore.HttpCamera;
+import edu.wpi.first.cscore.HttpCamera.HttpCameraKind;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 
 
 public class LimelightUtility {
@@ -127,5 +133,14 @@ public class LimelightUtility {
         else {
             WriteDouble("pipeline", pipeline);
         }
+    }
+
+    static private HttpCamera llFeed;
+
+    static public void Stream(){
+        ShuffleboardTab tab = Shuffleboard.getTab("Driver Dashboard");
+        llFeed = new HttpCamera("limelight","http://10.48.59.11:5800/stream.mjpg",
+            HttpCameraKind.kMJPGStreamer);
+        CameraServer.startAutomaticCapture(llFeed);
     }
 }

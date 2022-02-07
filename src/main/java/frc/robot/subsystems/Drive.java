@@ -101,14 +101,12 @@ leftFollower = new WPI_TalonFX(2);
         motorConfigFalcon();
         PixyCamera.initialize();
         PixyCamera.lightsOn();
-        SmartDashboard.putNumber("initial chase color", 1);
     }
 
     @Override
     public void periodic() {
         // This method will be called once per scheduler run
-        SmartDashboard.putBoolean("chase color", this.chaseColor == 1);
-
+        SmartDashboard.putBoolean("DriverDashboard/Pixy Chase Color", this.chaseColor == 1);
     }
 
     @Override
@@ -124,7 +122,7 @@ leftFollower = new WPI_TalonFX(2);
         double twist = joystickP0.getZ();
         // DifferentialDrive.arcadeDriveIK(Math.pow(y, 5), Math.pow(twist, 5), false);
         if (steerCorrection == 0)
-            differentialDrive.arcadeDrive(Math.pow(y, 3), -Math.pow(twist, 3));
+            differentialDrive.arcadeDrive(Math.pow(y, 3), Math.pow(twist, 3));
         else
             differentialDrive.arcadeDrive(Math.pow(y, 2), steerCorrection);
     }

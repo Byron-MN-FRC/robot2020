@@ -23,6 +23,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.AutonomousCommand;
 import frc.robot.commands.acquire;
 import frc.robot.commands.alexaFindBall;
+import frc.robot.commands.cmdDriverCamera;
 import frc.robot.commands.deployAcquisition;
 import frc.robot.commands.driveWithJoystick;
 import frc.robot.commands.dummyOne;
@@ -142,7 +143,11 @@ final JoystickButton btnShoot = new JoystickButton(operatorTwo, 1);
 btnShoot.whileHeld(new shoot() ,true);
     SmartDashboard.putData("btnShoot",new shoot() );
 
-final JoystickButton btnTogglePixyColor = new JoystickButton(operatorOne, 2);        
+final JoystickButton btnDriverCamera = new JoystickButton(operatorOne, 2);        
+btnDriverCamera.whileHeld(new cmdDriverCamera() ,true);
+    SmartDashboard.putData("btnDriverCamera",new cmdDriverCamera() );
+
+final JoystickButton btnTogglePixyColor = new JoystickButton(operatorOne, 12);        
 btnTogglePixyColor.whenPressed(new togglePixyColor( m_drive ) ,true);
     SmartDashboard.putData("btnTogglePixyColor",new togglePixyColor( m_drive ) );
 

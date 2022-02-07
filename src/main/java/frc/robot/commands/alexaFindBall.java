@@ -60,7 +60,7 @@ public class alexaFindBall extends CommandBase {
     @Override
     public void execute() {
         Block b = PixyCamera.getBiggestBlock(m_drive.chaseColor);
-        SmartDashboard.putBoolean("block found", b != null);
+        SmartDashboard.putBoolean("DriverDashboard/Target Found", b != null);
         if (b != null) {
             double targetPOS = 0;
             double mid_x = b.getX() + (b.getWidth() / 2.0);
@@ -78,7 +78,7 @@ public class alexaFindBall extends CommandBase {
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        PixyCamera.lightsOff();
+        //PixyCamera.lightsOff();
     }
 
     // Returns true when the command should end.
