@@ -1,6 +1,12 @@
 package frc.robot;
 
-import edu.wpi.first.networktables.*;
+import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.cscore.HttpCamera;
+import edu.wpi.first.cscore.HttpCamera.HttpCameraKind;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 
 
 public class LimelightUtility {
@@ -68,27 +74,27 @@ public class LimelightUtility {
 
     static public void LogTrackingData() {
         RefreshTrackingData();
-        // System.out.println('.');System.out.println('.');
-        // System.out.println("######################################################");
-        // System.out.println("#            Tracking data from Limelight            #");
-        // System.out.println("######################################################");
-        // System.out.print("TargetFound                     =");System.out.println(tv);
-        // System.out.print("TargetHorizontalOffset          =");System.out.println(tx);
-        // System.out.print("TargetVerticalOffset            =");System.out.println(ty);
-        // System.out.print("TargetAreaPercentage            =");System.out.println(ta);
-        // System.out.print("TargetSkew                      =");System.out.println(ts);
-        // System.out.print("PipelineLatency                 =");System.out.println(tl);
-        // System.out.print("TargetSideLengthShortest        =");System.out.println(tshort);
-        // System.out.print("TargetSideLenghtLongest         =");System.out.println(tlong);
-        // System.out.print("TargetHorizSideLengthRoughBox   =");System.out.println(thoriz);
-        // System.out.print("TargetVertSideLengthRoughbox    =");System.out.println(tvert);
-        // System.out.print("Camera3dTranslation_x           =");System.out.println(Camera3dTranslation_x);     
-        // System.out.print("Camera3dTranslation_y           =");System.out.println(Camera3dTranslation_y);     
-        // System.out.print("Camera3dTranslation_z           =");System.out.println(Camera3dTranslation_z);     
-        // System.out.print("Camera3dTranslation_pitch       =");System.out.println(Camera3dTranslation_pitch);  
-        // System.out.print("Camera3dTranslation_yaw         =");System.out.println(Camera3dTranslation_yaw);   
-        // System.out.print("Camera3dTranslation_roll        =");System.out.println(Camera3dTranslation_roll);   
-        // System.out.println("######################################################");
+        System.out.println('.');System.out.println('.');
+        System.out.println("######################################################");
+        System.out.println("#            Tracking data from Limelight            #");
+        System.out.println("######################################################");
+        System.out.print("TargetFound                     =");System.out.println(tv);
+        System.out.print("TargetHorizontalOffset          =");System.out.println(tx);
+        System.out.print("TargetVerticalOffset            =");System.out.println(ty);
+        System.out.print("TargetAreaPercentage            =");System.out.println(ta);
+        System.out.print("TargetSkew                      =");System.out.println(ts);
+        System.out.print("PipelineLatency                 =");System.out.println(tl);
+        System.out.print("TargetSideLengthShortest        =");System.out.println(tshort);
+        System.out.print("TargetSideLenghtLongest         =");System.out.println(tlong);
+        System.out.print("TargetHorizSideLengthRoughBox   =");System.out.println(thoriz);
+        System.out.print("TargetVertSideLengthRoughbox    =");System.out.println(tvert);
+        System.out.print("Camera3dTranslation_x           =");System.out.println(Camera3dTranslation_x);     
+        System.out.print("Camera3dTranslation_y           =");System.out.println(Camera3dTranslation_y);     
+        System.out.print("Camera3dTranslation_z           =");System.out.println(Camera3dTranslation_z);     
+        System.out.print("Camera3dTranslation_pitch       =");System.out.println(Camera3dTranslation_pitch);  
+        System.out.print("Camera3dTranslation_yaw         =");System.out.println(Camera3dTranslation_yaw);   
+        System.out.print("Camera3dTranslation_roll        =");System.out.println(Camera3dTranslation_roll);   
+        System.out.println("######################################################");
     }
 
     static public void WriteDouble(String tableField, double fieldValue){
@@ -127,5 +133,14 @@ public class LimelightUtility {
         else {
             WriteDouble("pipeline", pipeline);
         }
+    }
+
+    static private HttpCamera llFeed;
+
+    static public void Stream(){
+        ShuffleboardTab tab = Shuffleboard.getTab("Driver Dashboard");
+        llFeed = new HttpCamera("limelight","http://10.48.59.11:5800/stream.mjpg",
+            HttpCameraKind.kMJPGStreamer);
+        CameraServer.startAutomaticCapture(llFeed);
     }
 }
