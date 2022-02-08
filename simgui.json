@@ -11,6 +11,21 @@
           "open": true
         }
       },
+      "Talon FX[13]/Fwd Limit": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon FX[13]/Integrated Sensor": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon FX[13]/Rev Limit": {
+        "header": {
+          "open": true
+        }
+      },
       "Talon SRX[12]": {
         "header": {
           "open": true
@@ -55,9 +70,49 @@
       "/SmartDashboard/btnReverseAcquire": "Command",
       "/SmartDashboard/btnShoot": "Command",
       "/SmartDashboard/runIndexer": "Command"
+    },
+    "windows": {
+      "/FMSInfo": {
+        "window": {
+          "visible": true
+        }
+      }
+    }
+  },
+  "NetworkTables": {
+    "FMSInfo": {
+      "open": true
+    },
+    "LiveWindow": {
+      ".status": {
+        "open": true
+      },
+      "Drive": {
+        "open": true
+      },
+      "open": true
+    },
+    "SmartDashboard": {
+      "open": true
+    },
+    "limelight": {
+      "open": true
     }
   },
   "NetworkTables View": {
     "visible": false
+  },
+  "Plot": {
+    "Plot <0>": {
+      "plots": [
+        {
+          "crosshairs": true,
+          "height": 338
+        }
+      ],
+      "window": {
+        "visible": false
+      }
+    }
   }
 }
