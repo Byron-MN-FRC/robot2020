@@ -3,7 +3,7 @@ package frc.robot;
 import edu.wpi.first.networktables.*;
 
 
-public class LimelightUtility {
+public class LimelightUtility { 
 
     static private double tv;      //Whether the limelight has any valid targets (0 or 1)
     static private double tx;	    //Horizontal Offset From Crosshair To Target (-27 degrees to 27 degrees)
