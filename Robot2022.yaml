@@ -580,13 +580,10 @@ Children:
           default: None
           name: Command
           type: Command
-<<<<<<< HEAD
           validators: *id009
           value: enableLimelight
-=======
           validators: *id004
           value: enableLimeLight
->>>>>>> 63793b70e2bf421a62065e30993cc1da7c7cbb01
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
@@ -1167,11 +1164,8 @@ Children:
       Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Run When Disabled, validators: null, value: false}
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-<<<<<<< HEAD
         name: Requires, type: Subsystem, validators: null, value: BallIndexer}
-=======
         name: Requires, type: Subsystem, validators: null, value: Drive}
->>>>>>> 63793b70e2bf421a62065e30993cc1da7c7cbb01
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
         default: []
         name: Parameter presets
@@ -1180,9 +1174,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-<<<<<<< HEAD
     Name: runIndexer
-=======
     Name: enableLimeLight
   - Children: []
     Properties:
@@ -1228,7 +1220,6 @@ Children:
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: cmdDriverCamera
->>>>>>> 63793b70e2bf421a62065e30993cc1da7c7cbb01
   Properties: {}
   Base: Commands
   Name: Commands
@@ -1250,15 +1241,12 @@ Properties:
       Number, validators: null, value: 4859}
   Export Subsystems: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Subsystems, validators: null, value: true}
-<<<<<<< HEAD
   Wiring file location: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\robotics.ROBOTICS\',
     extension: null, folder: true, name: Wiring file location, validators: null, value: 'C:\FRC_Git'}
   Export Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\robotics.ROBOTICS\FRCProjects',
-=======
   Wiring file location: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\heinz\',
     extension: null, folder: true, name: Wiring file location, validators: null, value: 'C:\Users\robotics\'}
   Export Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\heinz\FRCProjects',
->>>>>>> 63793b70e2bf421a62065e30993cc1da7c7cbb01
     extension: null, folder: true, name: Export Directory, validators: null, value: 'C:\FRC_Git'}
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
     name: Autonomous Command, type: Command, validators: null, value: Autonomous Command}
