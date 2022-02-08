@@ -366,7 +366,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '10'
+          value: '2'
         Command: !!robotbuilder.data.properties.TypeSelectionProperty
           default: None
           name: Command
@@ -401,13 +401,13 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '2'
+          value: '11'
         Command: !!robotbuilder.data.properties.TypeSelectionProperty
           default: None
           name: Command
           type: Command
           validators: *id004
-          value: driveFlip
+          value: toggleCameraView
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
@@ -419,7 +419,7 @@ Children:
           validators: null
           value: whenPressed
       Base: Joystick Button
-      Name: btnFlipDrive
+      Name: btnToggleCameraView
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: &id006 ['0', '1', '2', '3', '4', '5']
@@ -1097,9 +1097,9 @@ Children:
         validators: null
         value: []
       Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
-        name: Run When Disabled, validators: null, value: false}
+        name: Run When Disabled, validators: null, value: true}
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Drive}
+        name: Requires, type: Subsystem, validators: null, value: None}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
         default: &id008 []
         name: Parameter presets
@@ -1108,7 +1108,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
-    Name: driveFlip
+    Name: toggleCameraView
   Properties: {}
   Base: Commands
   Name: Commands

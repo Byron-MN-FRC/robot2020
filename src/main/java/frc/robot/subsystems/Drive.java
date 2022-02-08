@@ -60,6 +60,7 @@ private WPI_TalonFX leftFollower;
     TalonFXInvertType _leftInvert = TalonFXInvertType.Clockwise; // Same as invert = "true"
     TalonFXConfiguration _rightConfig = new TalonFXConfiguration();
     TalonFXConfiguration _leftConfig = new TalonFXConfiguration();
+    public boolean FlipDrive = false;
 
     // private Boolean pixyChaseSteer = false;
     // private double steeringAdjustment = 0.0;
@@ -120,11 +121,17 @@ leftFollower = new WPI_TalonFX(2);
     public void JoystickDrive(Joystick joystickP0, double steerCorrection) {
         double y = joystickP0.getY();
         double twist = joystickP0.getZ();
+
+        // Flip the drive direction
+        if (this.FlipDrive) 
+            y = -y;
+
+            
         // DifferentialDrive.arcadeDriveIK(Math.pow(y, 5), Math.pow(twist, 5), false);
         if (steerCorrection == 0)
-            differentialDrive.arcadeDrive(Math.pow(y, 3), Math.pow(twist, 3));
+            differentialDrive.arcadeDrive(y, twist, true);
         else
-            differentialDrive.arcadeDrive(Math.pow(y, 2), steerCorrection);
+            differentialDrive.arcadeDrive(y, steerCorrection, false);
     }
 
     public void driveFroward() {
