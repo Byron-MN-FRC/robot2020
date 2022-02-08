@@ -12,12 +12,13 @@
 
 package frc.robot;
 
-import edu.wpi.first.hal.FRCNetComm.tInstances;
-import edu.wpi.first.hal.FRCNetComm.tResourceType;
-
 import com.revrobotics.ColorSensorV3;
 
+import edu.wpi.first.hal.FRCNetComm.tInstances;
+import edu.wpi.first.hal.FRCNetComm.tResourceType;
 import edu.wpi.first.hal.HAL;
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -47,18 +48,25 @@ public class Robot extends TimedRobot {
         // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
         // autonomous chooser on the dashboard.
         m_robotContainer = RobotContainer.getInstance();
-        //m_robotContainer.m_ballShooter.teleopWithIdle = false;
         HAL.report(tResourceType.kResourceType_Framework, tInstances.kFramework_RobotBuilder);
-        // m_robotContainer.m_ballAcquisition.retractSolenoid();
+
         // server = CameraServer.getInstance();
         // server.startAutomaticCapture("forward",0);
-        //SmartDashboard.putData("drive/Auto mode", chooser);
         LimelightUtility.EnableDriverCamera(true);
-        LimelightUtility.StreamingMode(LimelightUtility.StreamMode.Standard);
-    //    SmartDashboard.putString(Constants.autoPosition, "L");
+        LimelightUtility.StreamingMode(LimelightUtility.StreamMode.PIPMain);
         LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
-        //m_robotContainer.m_ballShooter.zeroOutHood();
-     //   SmartDashboard.putBoolean("HoodUp", false);
+
+
+        // 2022 - The robot needs to konw the current alliance color.   The following will read the alliance
+        // color from the driver station which gets it from the Field Management System.   We use the color to 
+        // set the initial pixy color tracking to the color of the alliance we are currently on. 
+        if (DriverStation.getAlliance() == Alliance.Blue)
+            m_robotContainer.m_drive.chaseColor = 1;
+        else
+            m_robotContainer.m_drive.chaseColor = 2;
+        
+        SmartDashboard.putString("DriverDashboard/AllianceColor", DriverStation.getAlliance().name());
+        LimelightUtility.Stream();
     }
 
     /**
@@ -77,8 +85,8 @@ public class Robot extends TimedRobot {
         CommandScheduler.getInstance().run();
         double IR = m_colorSensor.getIR();
 
-        SmartDashboard.putNumber("IR", IR);
-        SmartDashboard.putBoolean("Black Line", IR <= 6);
+        SmartDashboard.putNumber("Test/IR", IR);
+        SmartDashboard.putBoolean("Test/Black Line", IR <= 6);
     }
 
 
