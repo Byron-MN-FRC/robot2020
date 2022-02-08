@@ -56,16 +56,16 @@ public class shoot extends CommandBase {
     @Override
     public void initialize() {
          // Refresh limelight data
-//          LimelightUtility.RefreshTrackingData();
+         LimelightUtility.RefreshTrackingData();
         
-//          // Lookup optimal RPMS & Hood encoder units based on area (if target seen)
-//          if (LimelightUtility.ValidTargetFound()) {
-//             area = LimelightUtility.TargetAreaPercentage * 100; 
-//         } else {
-//    //         System.out.println("No target");
-//             area = 50;
-//         }  
-//         rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
+         // Lookup optimal RPMS & Hood encoder units based on area (if target seen)
+         if (LimelightUtility.ValidTargetFound()) {
+            area = LimelightUtility.TargetAreaPercentage * 100; 
+        } else {
+           System.out.println("No target");
+            area = 50;
+        }  
+        rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
         
    
 //          // Disable auto indexing 
@@ -79,8 +79,8 @@ public class shoot extends CommandBase {
     @Override
     public void execute() {
         m_ballShooter.releaseGate();
-        if (BallIndexer.topSensor.get() && m_ballShooter.checkGate() == 1)  {    
-            // if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(rpms)) {
+        // if (BallIndexer.topSensor.get() && m_ballShooter.checkGate() == 1)  {    
+            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(rpms)) {
             
                    m_ballShooter.shoot();
             }
