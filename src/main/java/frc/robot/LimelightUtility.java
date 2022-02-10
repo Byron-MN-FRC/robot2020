@@ -138,9 +138,9 @@ public class LimelightUtility {
     static private HttpCamera llFeed;
 
     static public void Stream(){
-        ShuffleboardTab tab = Shuffleboard.getTab("Driver Dashboard");
-        llFeed = new HttpCamera("limelight","http://10.48.59.11:5800/stream.mjpg",
-            HttpCameraKind.kMJPGStreamer);
-        CameraServer.startAutomaticCapture(llFeed);
+        // ShuffleboardTab tab = Shuffleboard.getTab("Driver Dashboard");
+        // llFeed = new HttpCamera("limelight","http://10.48.59.11:5800/stream.mjpg",
+        //     HttpCameraKind.kMJPGStreamer);
+        // CameraServer.startAutomaticCapture(llFeed);
     }
 }
