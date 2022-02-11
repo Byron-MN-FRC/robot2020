@@ -70,5 +70,8 @@ public class Constants {
     public final static int kSlot_Velocit = SLOT_2;
     public final static int kSlot_MotProf = SLOT_3; 
 
+    public static final int bicepLenght = 28;
+    public static final int forearmLength = 30;
+
  }
 
