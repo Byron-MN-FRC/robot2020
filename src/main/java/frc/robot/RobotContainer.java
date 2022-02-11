@@ -31,6 +31,7 @@ import frc.robot.commands.dummyOne;
 import frc.robot.commands.dummyTwo;
 import frc.robot.commands.enableClimb;
 import frc.robot.commands.enableLimeLight;
+import frc.robot.commands.flip;
 import frc.robot.commands.manualMagazineDown;
 import frc.robot.commands.manualMagazineUp;
 import frc.robot.commands.retractAcquisition;
@@ -152,6 +153,10 @@ btnEnableLimelight.whileHeld(new enableLimeLight( m_drive ) ,true);
 final JoystickButton btnShoot = new JoystickButton(operatorTwo, 1);        
 btnShoot.whileHeld(new shoot( m_ballShooter ) ,true);
     SmartDashboard.putData("btnShoot",new shoot( m_ballShooter ) );
+
+final JoystickButton btnFlip = new JoystickButton(operatorOne, 2);        
+btnFlip.whenPressed(new flip( m_drive ) ,true);
+    SmartDashboard.putData("btnFlip",new flip( m_drive ) );
 
 final JoystickButton btnDriverCamera = new JoystickButton(operatorOne, 2);        
 btnDriverCamera.whileHeld(new cmdDriverCamera() ,true);
