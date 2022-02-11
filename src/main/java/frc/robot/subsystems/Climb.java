@@ -158,5 +158,10 @@ rightElbow = new WPI_TalonFX(10);
     public void stopLeftShoulder() {
         leftShoulder.stopMotor();
     }
+    public boolean isLeftShoulder() {
+        return leftShoulderLimitSwitch.get();
+    }
+    public boolean isLeftElbow() {
+    return leftElbowLimitSwitch.get();
+    }
 }
-
