@@ -180,7 +180,7 @@ btnEnableClimb.whenPressed(new enableClimb() ,true);
     SmartDashboard.putData("btnEnableClimb",new enableClimb() );
 
 final JoystickButton btnDeployIntake = new JoystickButton(operatorOne, 6);        
-btnDeployIntake.whenPressed(new deployAcquisition( m_ballAcquisition ) ,true);
+btnDeployIntake.whileHeld(new deployAcquisition( m_ballAcquisition ) ,true);
     SmartDashboard.putData("btnDeployIntake",new deployAcquisition( m_ballAcquisition ) );
 
 final JoystickButton btnRetractIntake = new JoystickButton(operatorOne, 4);        
