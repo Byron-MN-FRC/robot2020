@@ -130,10 +130,6 @@ final JoystickButton btnEnableClimbTwo = new JoystickButton(operatorTwo, 7);
 btnEnableClimbTwo.whenPressed(new enableClimb() ,true);
     SmartDashboard.putData("btnEnableClimbTwo",new enableClimb() );
 
-final JoystickButton btnDeployIntakeTwo = new JoystickButton(operatorTwo, 6);        
-btnDeployIntakeTwo.whenPressed(new deployAcquisition( m_ballAcquisition ) ,true);
-    SmartDashboard.putData("btnDeployIntakeTwo",new deployAcquisition( m_ballAcquisition ) );
-
 final JoystickButton btnRetractIntakeTwo = new JoystickButton(operatorTwo, 4);        
 btnRetractIntakeTwo.whenPressed(new retractAcquisition( m_ballAcquisition ) ,true);
     SmartDashboard.putData("btnRetractIntakeTwo",new retractAcquisition( m_ballAcquisition ) );
@@ -171,12 +167,8 @@ btnEnableClimb.whenPressed(new enableClimb() ,true);
     SmartDashboard.putData("btnEnableClimb",new enableClimb() );
 
 final JoystickButton btnDeployIntake = new JoystickButton(operatorOne, 6);        
-btnDeployIntake.whenPressed(new deployAcquisition( m_ballAcquisition ) ,true);
+btnDeployIntake.whileHeld(new deployAcquisition( m_ballAcquisition ) ,false);
     SmartDashboard.putData("btnDeployIntake",new deployAcquisition( m_ballAcquisition ) );
-
-final JoystickButton btnRetractIntake = new JoystickButton(operatorOne, 4);        
-btnRetractIntake.whenPressed(new retractAcquisition( m_ballAcquisition ) ,true);
-    SmartDashboard.putData("btnRetractIntake",new retractAcquisition( m_ballAcquisition ) );
 
 final JoystickButton btnAcquire = new JoystickButton(operatorOne, 5);        
 btnAcquire.whileHeld(new acquire( m_ballAcquisition ) ,false);

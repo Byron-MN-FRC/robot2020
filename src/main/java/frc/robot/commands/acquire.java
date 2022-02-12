@@ -54,13 +54,15 @@ public class acquire extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_ballAcquisition.runAquisitionMotor(0.75);
+          // m_ballAcquisition.runAquisitionMotor(0.75);
+          System.out.println("running intake");
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        m_ballAcquisition.stopAquisitionMotor();
+        // m_ballAcquisition.stopAquisitionMotor();
+        System.out.println("stopping intake");
     }
 
     // Returns true when the command should end.
