@@ -73,19 +73,21 @@ public class shoot extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_ballShooter.releaseGate();
-        if (BallIndexer.topSensor.get() && m_ballShooter.checkGate() == 1)  {    
-            // if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(rpms)) {
+        // m_ballShooter.releaseGate();
+        System.out.println("shoot.java");
+        // if (BallIndexer.topSensor.get() && m_ballShooter.checkGate() == 1)  {    
+        //     // if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(rpms)) {
             
-                   m_ballShooter.shoot();
-            }
+        //            m_ballShooter.shoot();
+        //     }
         // }  
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        m_ballShooter.stopMotor();
+        // m_ballShooter.stopMotor();
+        System.out.println("notShoot.java");
     }
 
     // Returns true when the command should end.
