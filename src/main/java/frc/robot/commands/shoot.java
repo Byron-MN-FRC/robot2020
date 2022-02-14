@@ -80,11 +80,11 @@ public class shoot extends CommandBase {
     public void execute() {
         m_ballShooter.releaseGate();
         // if (BallIndexer.topSensor.get() && m_ballShooter.checkGate() == 1)  {    
-            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(rpms)) {
+            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(3000)) {
             
                    m_ballShooter.shoot();
             }
-        // }  
+        // }   
     }
 
     // Called once the command ends or is interrupted.
