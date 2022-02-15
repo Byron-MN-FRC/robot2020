@@ -36,14 +36,13 @@ import frc.robot.commands.dummyOne;
 import frc.robot.commands.dummyTwo;
 import frc.robot.commands.enableClimb;
 import frc.robot.commands.enableLimeLight;
-
-
 import frc.robot.commands.flip;
-
+import frc.robot.commands.flipo;
 import frc.robot.commands.manualMagazineDown;
 import frc.robot.commands.manualMagazineUp;
 import frc.robot.commands.retractAcquisition;
 import frc.robot.commands.reverseAcquire;
+import frc.robot.commands.runIndexer;
 import frc.robot.commands.shoot;
 import frc.robot.commands.togglePixyColor;
 import frc.robot.subsystems.BallAcquisition;

@@ -36,7 +36,7 @@ public class BallIndexer extends SubsystemBase {
 private static WPI_TalonSRX beltMotorLeft;
 private DigitalInput bottomSensor;
 private static WPI_TalonSRX beltMotorRight;
-public static DigitalInput topSensor;
+
 public static boolean shootyMode = false;
 
 
