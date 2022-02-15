@@ -72,6 +72,7 @@ public class shoot extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
+
        
         if (BallIndexer.topSensor.get())  {    
             if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(4300 )) {
@@ -79,11 +80,13 @@ public class shoot extends CommandBase {
                 //    m_ballShooter.shoot();
             }
         }   
+
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
+
         m_ballShooter.stopMotor();
        BallIndexer.shootyMode= false;   
        rpms = 0;    

@@ -35,13 +35,23 @@ public class AutoBlueLeft extends SequentialCommandGroup {
         // Add Commands here:
         // Also add parallel commands using the
         //
+
+        //  addCommands(
+
         // addCommands(
+
         //      new command1(argsN, subsystem),
         //      parallel(
         //          new command2(argsN, subsystem),
         //          new command3(argsN, subsystem)
+
+// new driveForward(1.9, m_Drive)
+                
+        //   );
+
         //      )    
         //  );
+
 
         );
     }
