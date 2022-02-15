@@ -141,6 +141,10 @@ leftFollower = new WPI_TalonFX(2);
 
     }
 
+    public void autoPixyChase(double speed, double steerCorrection){
+        differentialDrive.arcadeDrive(speed, steerCorrection);
+    }
+
     public void closedLoopTurn(double angle) {
         rightMaster.set(ControlMode.MotionMagic, 0, DemandType.AuxPID, angle * 10);
         leftMaster.follow(rightMaster, FollowerType.AuxOutput1);

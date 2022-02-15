@@ -22,6 +22,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.AutoBlueLeft;
 import frc.robot.commands.AutoBlueRight;
+import frc.robot.commands.AutoPixyDrive;
 import frc.robot.commands.AutoRedLeft;
 import frc.robot.commands.AutoRedRight;
 import frc.robot.commands.acquire;
@@ -157,6 +158,10 @@ btnEnableLimelight.whileHeld(new enableLimeLight( m_drive ) ,true);
 final JoystickButton btnShoot = new JoystickButton(operatorTwo, 1);        
 btnShoot.whileHeld(new shoot( m_ballShooter ) ,true);
     SmartDashboard.putData("btnShoot",new shoot( m_ballShooter ) );
+
+final JoystickButton btnAutoPixyTest = new JoystickButton(operatorOne, 8);        
+btnAutoPixyTest.whenPressed(new AutoPixyDrive( m_drive ) ,true);
+    SmartDashboard.putData("btnAutoPixyTest",new AutoPixyDrive( m_drive ) );
 
 final JoystickButton btnRetractIntake = new JoystickButton(operatorOne, 11);        
 btnRetractIntake.whenReleased(new retractAcquisition( m_ballAcquisition ) ,false);
