@@ -35,11 +35,16 @@
         "header": {
           "open": true
         }
-      }
-    },
-    "PWM Outputs": {
-      "window": {
-        "visible": true
+      },
+      "Talon SRX[5]": {
+        "header": {
+          "open": true
+        }
+      },
+      "Talon SRX[5]/Analog In": {
+        "header": {
+          "open": true
+        }
       }
     }
   },
@@ -54,10 +59,17 @@
       "/LiveWindow/Drive": "Subsystem",
       "/LiveWindow/Drive/differentialDrive": "DifferentialDrive",
       "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
+      "/LiveWindow/Ungrouped/Talon FX [0]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [13]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [2]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon SRX [12]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon SRX [14]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon SRX [5]": "Motor Controller",
       "/SmartDashboard/Auto Mode": "String Chooser",
       "/SmartDashboard/btnAcquire": "Command",
       "/SmartDashboard/btnDeployIntake": "Command",
       "/SmartDashboard/btnDeployIntakeTwo": "Command",
+      "/SmartDashboard/btnDriverCamera": "Command",
       "/SmartDashboard/btnEnableClimb": "Command",
       "/SmartDashboard/btnEnableClimbTwo": "Command",
       "/SmartDashboard/btnEnableLimelight": "Command",
@@ -69,7 +81,10 @@
       "/SmartDashboard/btnRetractIntakeTwo": "Command",
       "/SmartDashboard/btnReverseAcquire": "Command",
       "/SmartDashboard/btnShoot": "Command",
-      "/SmartDashboard/runIndexer": "Command"
+      "/SmartDashboard/btnTogglePixyColor": "Command",
+      "/SmartDashboard/enableLimeLight": "Command",
+      "/SmartDashboard/runIndexer": "Command",
+      "/SmartDashboard/togglePixyColor": "Command"
     },
     "windows": {
       "/FMSInfo": {
