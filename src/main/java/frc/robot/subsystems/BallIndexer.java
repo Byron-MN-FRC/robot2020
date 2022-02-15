@@ -78,7 +78,7 @@ topSensor = new DigitalInput(9);
                 stopIndexer();
             }
         } else{
-            startIndexer(-.5);
+            startIndexer(-.7);
         }
         SmartDashboard.putBoolean("sensor bottom", bottomSensor.get());
         SmartDashboard.putBoolean("sensor top", topSensor.get());
@@ -92,7 +92,7 @@ topSensor = new DigitalInput(9);
     public static void startIndexer(double speed){
     
         beltMotorLeft.set(speed);
-        beltMotorRight.set(speed);
+        beltMotorRight.set(-speed);
     
     }
     public static void stopIndexer(){

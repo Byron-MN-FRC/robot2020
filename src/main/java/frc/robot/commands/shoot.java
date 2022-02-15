@@ -79,7 +79,7 @@ public class shoot extends CommandBase {
     public void execute() {
        
         if (BallIndexer.topSensor.get())  {    
-            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(6000)) {
+            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(4300 )) {
                     BallIndexer.shootyMode = true;
                 //    m_ballShooter.shoot();
             }
@@ -90,7 +90,8 @@ public class shoot extends CommandBase {
     @Override
     public void end(boolean interrupted) {
         m_ballShooter.stopMotor();
-       BallIndexer.shootyMode= false;       
+       BallIndexer.shootyMode= false;   
+       rpms = 0;    
         // BallIndexer.stopIndexer();
    }
 
