@@ -76,10 +76,11 @@ aquisitionDeploy = new WPI_TalonSRX(6);
     }
 
     public void runDeployMotor(double speed) {
-        acquireMotor.set(speed);
+        aquisitionDeploy.set(speed);
     }
     public void stopDeployMotor() {
-        acquireMotor.set(0);
+        aquisitionDeploy.set(0);
     }
+
 }
 
