@@ -54,11 +54,13 @@ public class RetractAcquisitionAuto extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
+        m_ballAcquisition.runDeployMotor(-0.5);
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
+        m_ballAcquisition.stopDeployMotor();
     }
 
     // Returns true when the command should end.
