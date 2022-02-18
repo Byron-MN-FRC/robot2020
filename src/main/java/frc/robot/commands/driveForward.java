@@ -62,20 +62,22 @@ public class driveForward extends CommandBase {
     @Override
     public void execute() {
         double m_encoderUnits = Constants.encodeUnitsToFeet * m_distanceInFeet;
-        m_drive.driveToEncoderUnits(m_encoderUnits);
+        // m_drive.driveToEncoderUnits(m_encoderUnits);
+        System.out.println("Driving to position");
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
         m_drive.stop();
+        System.out.println("Position reached Yay!");
     }
 
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
         double m_encoderUnits = Constants.encodeUnitsToFeet * m_distanceInFeet;
-        return(m_drive.atTarget(m_encoderUnits));   
+        return/*(m_drive.atTarget(m_encoderUnits));  */  false;
     }
 
     @Override

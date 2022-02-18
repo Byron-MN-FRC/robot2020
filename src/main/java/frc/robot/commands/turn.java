@@ -56,19 +56,20 @@ public class turn extends CommandBase {
     @Override
     public void execute() {
         m_drive.closedLoopTurn(m_turnAmount);
+        System.out.println("Turning");
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        System.out.print("**********************Interupted" + interrupted);
+        System.out.print("Turn Complete");
         m_drive.stop();
     }
 
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return m_drive.turnComplete(m_turnAmount);
+        return /*m_drive.turnComplete(m_turnAmount);*/ false;
     }
 
     @Override
