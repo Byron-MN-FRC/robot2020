@@ -42,17 +42,17 @@ public class AutoRedRight extends SequentialCommandGroup {
         //          new command3(argsN, subsystem)
         //      )    
         //  );
-        new driveForward(7.8, RobotContainer.getInstance().m_drive),
+        new driveForward(7.8, m_Drive),
         new DeployAcquisitionAuto(m_ballAcquisition).withTimeout(5),
         new AcquireAuto(m_ballAcquisition).withTimeout(5),
         new RetractAcquisitionAuto(m_ballAcquisition).withTimeout(5),
-        new turn(-218, RobotContainer.getInstance().m_drive),
-        new driveForward(11.18, RobotContainer.getInstance().m_drive),
+        new turn(-218, m_Drive),
+        new driveForward(11.18, m_Drive),
         new DeployAcquisitionAuto(m_ballAcquisition).withTimeout(5),
         new AcquireAuto(m_ballAcquisition).withTimeout(5),
         new RetractAcquisitionAuto(m_ballAcquisition).withTimeout(5),
-        new turn(-29, RobotContainer.getInstance().m_drive),
-        new driveForward(6.4, RobotContainer.getInstance().m_drive),
+        new turn(-29, m_Drive),
+        new driveForward(6.4, m_Drive),
         new ShootAuto(m_ballShooter).withTimeout(5)
         );
     }
