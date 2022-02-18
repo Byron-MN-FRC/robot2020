@@ -14,7 +14,7 @@ Children:
             default: '2'
             name: CAN ID
             validators: &id002 [CANID]
-            value: '3'
+            value: '5'
         Base: Talon FX
         Name: leftMaster
       - Children: []
@@ -24,7 +24,7 @@ Children:
             default: '2'
             name: CAN ID
             validators: *id002
-            value: '1'
+            value: '12'
         Base: Talon FX
         Name: rightMaster
       Properties:
@@ -60,26 +60,6 @@ Children:
           value: '4'
       Base: Pigeon IMU
       Name: Pigeon
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '2'
-          name: CAN ID
-          validators: *id002
-          value: '0'
-      Base: Talon FX
-      Name: rightFollower
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '2'
-          name: CAN ID
-          validators: *id002
-          value: '2'
-      Base: Talon FX
-      Name: leftFollower
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: false}
@@ -1101,10 +1081,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Drive}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id008 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id008
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
