@@ -54,19 +54,21 @@ public class flip extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_drive.flipDrive(true);
+        // m_drive.flipDrive(true);
+        m_drive.isFlipped = !m_drive.isFlipped;
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        m_drive.flipDrive(false);
+        // m_drive.flipDrive(false);
+        
     }
 
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return false;
+        return true;
     }
 
     @Override
