@@ -6,26 +6,6 @@
       }
     },
     "Other Devices": {
-      "Talon FX[13]": {
-        "header": {
-          "open": true
-        }
-      },
-      "Talon FX[13]/Fwd Limit": {
-        "header": {
-          "open": true
-        }
-      },
-      "Talon FX[13]/Integrated Sensor": {
-        "header": {
-          "open": true
-        }
-      },
-      "Talon FX[13]/Rev Limit": {
-        "header": {
-          "open": true
-        }
-      },
       "Talon SRX[12]": {
         "header": {
           "open": true

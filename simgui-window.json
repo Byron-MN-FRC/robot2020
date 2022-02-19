@@ -13,7 +13,7 @@
   "Window": {
     "###/FMSInfo": {
       "Collapsed": "0",
-      "Pos": "431,192",
+      "Pos": "268,287",
       "Size": "169,167"
     },
     "###/LiveWindow/BallShooter": {
@@ -23,7 +23,7 @@
     },
     "###/SmartDashboard/Auto Mode": {
       "Collapsed": "0",
-      "Pos": "526,110",
+      "Pos": "278,510",
       "Size": "254,54"
     },
     "###/SmartDashboard/btnShoot": {
@@ -33,7 +33,7 @@
     },
     "###DIO": {
       "Collapsed": "0",
-      "Pos": "468,13",
+      "Pos": "467,13",
       "Size": "162,215"
     },
     "###FMS": {
