@@ -74,7 +74,7 @@ leftShoulderLimitSwitch = new DigitalInput(4);
  addChild("LeftShoulderLimitSwitch", leftShoulderLimitSwitch);
  
 
-rightHandLimitSwitch = new DigitalInput(5);
+rightHandLimitSwitch = new DigitalInput(11);
  addChild("RightHandLimitSwitch", rightHandLimitSwitch);
  
 
