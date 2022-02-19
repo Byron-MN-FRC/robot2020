@@ -96,18 +96,17 @@ topSensor = new DigitalInput(9);
         beltMotorRight.set(0);
     }
     public boolean sensorTripped(){
-        if (!bottomSensor.get() || topSensor.get()){
+        if (isBottomSensor() || !isBottomSensor()){
             return true;
         } else{
             return false; 
         }
     }
     public boolean isTopsensor() {
-        if (topSensor.get()) {
-            return true;
-        } else {
-            return false;
-        }
+        return !topSensor.get();
+    }
+    public boolean isBottomSensor(){
+        return !bottomSensor.get();
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.

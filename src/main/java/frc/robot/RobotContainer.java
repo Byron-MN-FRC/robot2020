@@ -36,9 +36,9 @@ import frc.robot.commands.enableClimb;
 import frc.robot.commands.enableLimeLight;
 import frc.robot.commands.flip;
 import frc.robot.commands.manualMagazineDown;
-import frc.robot.commands.manualMagazineUp;
 import frc.robot.commands.retractAcquisition;
 import frc.robot.commands.reverseAcquire;
+import frc.robot.commands.runIndexer;
 import frc.robot.commands.shoot;
 import frc.robot.commands.togglePixyColor;
 import frc.robot.subsystems.BallAcquisition;
@@ -142,8 +142,8 @@ btnDriverCamera.whileHeld(new cmdDriverCamera() ,true);
     SmartDashboard.putData("btnDriverCamera",new cmdDriverCamera() );
 
 final JoystickButton btnMagazineOut = new JoystickButton(operatorTwo, 9);        
-btnMagazineOut.whileHeld(new manualMagazineUp() ,true);
-    SmartDashboard.putData("btnMagazineOut",new manualMagazineUp() );
+btnMagazineOut.whileHeld(new runIndexer( m_ballIndexer ) ,true);
+    SmartDashboard.putData("btnMagazineOut",new runIndexer( m_ballIndexer ) );
 
 final JoystickButton btnEnableClimbTwo = new JoystickButton(operatorTwo, 7);        
 btnEnableClimbTwo.whenPressed(new enableClimb() ,true);

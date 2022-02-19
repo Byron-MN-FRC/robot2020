@@ -77,7 +77,7 @@ public class shoot extends CommandBase {
 
        
         if (m_BallIndexer.isTopsensor())  {    
-            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(rpms)) {
+            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(5000)) {
                     BallIndexer.shootyMode = true;
                 //    m_ballShooter.shoot();
             }
