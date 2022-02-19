@@ -63,7 +63,7 @@ public class driveForward extends CommandBase {
     @Override
     public void execute() {
         double m_encoderUnits = Constants.encodeUnitsToFeet * m_distanceInFeet;
-        // m_drive.driveToEncoderUnits(m_encoderUnits);
+        m_drive.driveToEncoderUnits(m_encoderUnits);
         
     }
 

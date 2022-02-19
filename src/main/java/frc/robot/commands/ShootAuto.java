@@ -68,13 +68,13 @@ public class ShootAuto extends CommandBase {
     public void execute() {
 
        
-        // if (m_BallIndexer.isTopsensor())  {    
-        //     if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(4300 )) {
-        //             BallIndexer.shootyMode = true;
-                //    m_ballShooter.shoot();
+        if (m_BallIndexer.isTopsensor())  {    
+            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(4300 )) {
+                    BallIndexer.shootyMode = true;
+                   m_ballShooter.shoot();
 
-            // }
-        // } 
+            }
+        } 
        
 
     }
