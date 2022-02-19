@@ -69,7 +69,7 @@ public class Robot extends TimedRobot {
         
         SmartDashboard.putString("DriverDashboard/AllianceColor", DriverStation.getAlliance().name());
         LimelightUtility.Stream();
-        BallShooter.setMasterShootVelocity(0);
+        RobotContainer.getInstance().m_ballShooter.setMasterShootVelocity(0);
     }
 
     /**
