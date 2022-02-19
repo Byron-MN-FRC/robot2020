@@ -56,16 +56,31 @@
       "/LiveWindow/BallIndexer/bottomSensor": "Digital Input",
       "/LiveWindow/BallIndexer/topSensor": "Digital Input",
       "/LiveWindow/BallShooter": "Subsystem",
+      "/LiveWindow/Climb": "Subsystem",
+      "/LiveWindow/Climb/LeftElbowLimitSwitch": "Digital Input",
+      "/LiveWindow/Climb/LeftShoulderLimitSwitch": "Digital Input",
+      "/LiveWindow/Climb/RightElbowLimitSwitch": "Digital Input",
+      "/LiveWindow/Climb/RightHandLimitSwitch": "Digital Input",
+      "/LiveWindow/Climb/RightShoulderLimitSwitch": "Digital Input",
+      "/LiveWindow/Climb/lefthandLimitSwitch": "Digital Input",
       "/LiveWindow/Drive": "Subsystem",
       "/LiveWindow/Drive/differentialDrive": "DifferentialDrive",
       "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
       "/LiveWindow/Ungrouped/Talon FX [0]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [10]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon FX [13]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon FX [2]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [7]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [9]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon SRX [12]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon SRX [14]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon SRX [17]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon SRX [26]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon SRX [5]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon SRX [6]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon SRX [8]": "Motor Controller",
       "/SmartDashboard/Auto Mode": "String Chooser",
+      "/SmartDashboard/AutoPixyDrive": "Command",
       "/SmartDashboard/btnAcquire": "Command",
       "/SmartDashboard/btnDeployIntake": "Command",
       "/SmartDashboard/btnDeployIntakeTwo": "Command",
@@ -74,20 +89,29 @@
       "/SmartDashboard/btnEnableClimbTwo": "Command",
       "/SmartDashboard/btnEnableLimelight": "Command",
       "/SmartDashboard/btnFindBall": "Command",
+      "/SmartDashboard/btnFlip": "Command",
       "/SmartDashboard/btnIndexer": "Command",
       "/SmartDashboard/btnMagazineDown": "Command",
+      "/SmartDashboard/btnMagazineIn": "Command",
+      "/SmartDashboard/btnMagazineOut": "Command",
       "/SmartDashboard/btnMagazineUp": "Command",
       "/SmartDashboard/btnRetractIntake": "Command",
       "/SmartDashboard/btnRetractIntakeTwo": "Command",
       "/SmartDashboard/btnReverseAcquire": "Command",
       "/SmartDashboard/btnShoot": "Command",
       "/SmartDashboard/btnTogglePixyColor": "Command",
+      "/SmartDashboard/climbCommandGroup": "Command",
       "/SmartDashboard/enableLimeLight": "Command",
       "/SmartDashboard/runIndexer": "Command",
       "/SmartDashboard/togglePixyColor": "Command"
     },
     "windows": {
       "/FMSInfo": {
+        "window": {
+          "visible": true
+        }
+      },
+      "/SmartDashboard/Auto Mode": {
         "window": {
           "visible": true
         }

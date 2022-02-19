@@ -50,13 +50,14 @@ public class turn extends CommandBase {
     @Override
     public void initialize() {
        m_drive.zeroSensors();
+       System.out.println("Turning");
      }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
         m_drive.closedLoopTurn(m_turnAmount);
-        System.out.println("Turning");
+        
     }
 
     // Called once the command ends or is interrupted.

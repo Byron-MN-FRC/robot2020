@@ -49,13 +49,14 @@ public class DeployAcquisitionAuto extends CommandBase {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
+        System.out.println("Deploy Acquistion Start");
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
         m_ballAcquisition.runDeployMotor(0.5);
-        System.out.println("Deploy Acquistion Start");
+        
     }
 
     // Called once the command ends or is interrupted.

@@ -38,6 +38,8 @@ public class PixyCamera {
 				largestBlock = block;
 			} else if (block.getWidth() > largestBlock.getWidth()) {
 				largestBlock = block;
+			}else if (block.getWidth() > largestBlock.getHeight()*2){
+				largestBlock = null;
 			}
 		}
 		return largestBlock;
@@ -55,7 +57,7 @@ public class PixyCamera {
 
 	public static void lightsOn() {
 		LampsEnabled = true;
-		pixy.setLamp((byte) 1, (byte) 1); // Turns the LEDs on
+		pixy.setLamp((byte) 1, (byte) 1 ); // Turns the LEDs on
 		pixy.setLED(255, 255, 255); // Sets the RGB LED to full white
 	}
 	

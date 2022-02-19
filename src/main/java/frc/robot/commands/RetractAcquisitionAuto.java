@@ -49,13 +49,14 @@ public class RetractAcquisitionAuto extends CommandBase {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
+        System.out.println("Retracting Acquistion");
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
         m_ballAcquisition.runDeployMotor(-0.5);
-        System.out.println("Retracting Acquistion");
+        
     }
 
     // Called once the command ends or is interrupted.

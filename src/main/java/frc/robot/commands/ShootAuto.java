@@ -55,7 +55,7 @@ public class ShootAuto extends CommandBase {
     public void initialize() {
          // Refresh limelight data
       
-        
+         System.out.println("shooting");
    
 //          // Disable auto indexing 
          
@@ -75,7 +75,7 @@ public class ShootAuto extends CommandBase {
 
             // }
         // } 
-        System.out.println("shooting");
+       
 
     }
 

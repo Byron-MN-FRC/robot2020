@@ -56,6 +56,7 @@ public class driveForward extends CommandBase {
     @Override
     public void initialize() {
         m_drive.zeroSensors();
+        System.out.println("Driving to position");
     }
 
     // Called every time the scheduler runs while the command is scheduled.
@@ -63,7 +64,7 @@ public class driveForward extends CommandBase {
     public void execute() {
         double m_encoderUnits = Constants.encodeUnitsToFeet * m_distanceInFeet;
         // m_drive.driveToEncoderUnits(m_encoderUnits);
-        System.out.println("Driving to position");
+        
     }
 
     // Called once the command ends or is interrupted.

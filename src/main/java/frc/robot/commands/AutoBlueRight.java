@@ -35,7 +35,7 @@ public class AutoBlueRight extends SequentialCommandGroup {
         new ShootAuto(m_ballShooter).withTimeout(5),
         new driveForward(7.8, m_Drive).withTimeout(5),
         new DeployAcquisitionAuto(m_ballAcquisition).withTimeout(5),
-        new AutoPixyDrive(m_Drive),
+        new AutoPixyDrive(m_Drive).withTimeout(1),
         new AcquireAuto(m_ballAcquisition).withTimeout(5),
         new RetractAcquisitionAuto(m_ballAcquisition).withTimeout(5),
         new turn(218, m_Drive).withTimeout(5),
