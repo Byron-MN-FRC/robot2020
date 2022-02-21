@@ -50,19 +50,21 @@ public class runIndexer extends CommandBase {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-
+        BallIndexer.shootyMode = true;
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_ballIndexer.startIndexer(0.5);
+        
+        // m_ballIndexer.startIndexer(0.5);
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
        m_ballIndexer.stopIndexer();
+       BallIndexer.shootyMode = false;
     }
 
 
