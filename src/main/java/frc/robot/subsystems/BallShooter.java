@@ -191,7 +191,7 @@ shootMotor = new WPI_TalonFX(13);
 //   
    
     public void shoot(){
-       shootMotor.set(0.77);
+       shootMotor.set(0.9);
        
 
     }
