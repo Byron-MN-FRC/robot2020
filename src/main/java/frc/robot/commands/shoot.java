@@ -76,12 +76,12 @@ public class shoot extends CommandBase {
     public void execute() {
 
        
-        // if (m_BallIndexer.isTopsensor())  {    
-            // if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(5000)) {
+    //   ?  if (m_BallIndexer.isTopsensor())  {    
+            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(3000)) {
                     BallIndexer.shootyMode = true;
-                   m_ballShooter.shoot();
-            // }
-        // }   
+                //    m??_ballShooter.shoot();
+        //    ? }
+        }   
 
     }
 
@@ -89,7 +89,8 @@ public class shoot extends CommandBase {
     @Override
     public void end(boolean interrupted) {
 
-        m_ballShooter.stopMotor();
+        // m_ballShooter.stopMotor();
+        m_ballShooter.setMasterShootVelocity(0);
        BallIndexer.shootyMode= false;   
        rpms = 0;    
         // BallIndexer.stopIndexer();
