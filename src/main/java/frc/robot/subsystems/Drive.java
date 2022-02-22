@@ -105,6 +105,7 @@ leftFollower = new WPI_TalonFX(2);
         motorConfigFalcon();
         PixyCamera.initialize();
         PixyCamera.lightsOn();
+        zeroSensors();
     }
 
     @Override
@@ -131,12 +132,15 @@ leftFollower = new WPI_TalonFX(2);
         }
         // DifferentialDrive.arcadeDriveIK(Math.pow(y, 5), Math.pow(twist, 5), false);
 
-        if (steerCorrection == 0)
+        if (steerCorrection == 0){
             //differentialDrive.arcadeDrive(Math.pow(y, 3), Math.pow(twist, 5));
             differentialDrive.arcadeDrive((y*flip), twist, true);
-        else
+        }else{
             differentialDrive.arcadeDrive(y*flip, steerCorrection, true);
+        }
+        System.out.println(rightMaster.getSelectedSensorPosition(Constants.kPIDLoopIdx));
     }
+
 
 
     
@@ -169,11 +173,12 @@ leftFollower = new WPI_TalonFX(2);
     public void driveToEncoderUnits(double target_sensorUnits) {
         rightMaster.set(ControlMode.MotionMagic, target_sensorUnits, DemandType.AuxPID, 0);
         leftMaster.follow(rightMaster, FollowerType.AuxOutput1);
+        System.out.println(rightMaster.getSelectedSensorPosition(Constants.kPIDLoopIdx));
     }
 
     public boolean atTarget(double encoderUnits) {
         double rightCurrentEncoderUnits = rightMaster.getSelectedSensorPosition(Constants.kPIDLoopIdx);
-        //rightCurrentEncoderUnits = rightMaster.getSensorCollection().getIntegratedSensorPosition();
+        rightCurrentEncoderUnits = rightMaster.getSensorCollection().getIntegratedSensorPosition();
         double remainingRight = Math.abs(rightCurrentEncoderUnits - encoderUnits);
         if (remainingRight < 1000) { // Less than 1000 encoder units approx 1/2 in
             return true;
@@ -349,9 +354,9 @@ leftFollower = new WPI_TalonFX(2);
         // _rightConfig.motionCruiseVelocity = 4000; // distance units per 100 ms
 
         // APPLY the config settings
-        //leftMaster.configAllSettings(_leftConfig);
+        leftMaster.configAllSettings(_leftConfig);
         leftFollower.configAllSettings(_leftConfig);
-        //rightMaster.configAllSettings(_rightConfig);
+        rightMaster.configAllSettings(_rightConfig);
         rightFollower.configAllSettings(_rightConfig);
 
         // Set status frame periods to ensure we don't have stale data
@@ -378,8 +383,8 @@ leftFollower = new WPI_TalonFX(2);
     }
 
     public void zeroSensors() {
-        //leftMaster.getSensorCollection().setIntegratedSensorPosition(0, Constants.kTimeoutMs);
-        //rightMaster.getSensorCollection().setIntegratedSensorPosition(0, Constants.kTimeoutMs);
+        leftMaster.getSensorCollection().setIntegratedSensorPosition(0, Constants.kTimeoutMs);
+        rightMaster.getSensorCollection().setIntegratedSensorPosition(0, Constants.kTimeoutMs);
         pigeon.setYaw(0, Constants.kTimeoutMs);
         pigeon.setAccumZAngle(0, Constants.kTimeoutMs);
 
