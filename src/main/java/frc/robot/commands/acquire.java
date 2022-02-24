@@ -55,14 +55,14 @@ public class acquire extends CommandBase {
     @Override
     public void execute() {
         m_ballAcquisition.runAquisitionMotor(0.75);
-        System.out.println("running intake");
+        //System.out.println("running intake");
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
         m_ballAcquisition.stopAquisitionMotor();
-        System.out.println("stopping intake");
+        //System.out.println("stopping intake");
     }
 
     // Returns true when the command should end.

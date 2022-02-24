@@ -52,20 +52,20 @@ public class shoot extends CommandBase {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-         // Refresh limelight data
-        //  LimelightUtility.RefreshTrackingData();
+         //Refresh limelight data
+         LimelightUtility.RefreshTrackingData();
         
-        //  // Lookup optimal RPMS & Hood encoder units based on area (if target seen)
-        //  if (LimelightUtility.ValidTargetFound()) {
-        //     area = LimelightUtility.TargetAreaPercentage * 100; 
-        // } else {
-        //    System.out.println("No target");
-        //     area = 60;
-        // }  
-        // rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
+         // Lookup optimal RPMS & Hood encoder units based on area (if target seen)
+         if (LimelightUtility.ValidTargetFound()) {
+            area = LimelightUtility.TargetAreaPercentage * 100; 
+        } else {
+           System.out.println("No target");
+            area = 60;
+        }  
+        rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
         
    
-//          // Disable auto indexing 
+         // Disable auto indexing 
          
   
      }
@@ -76,12 +76,12 @@ public class shoot extends CommandBase {
     public void execute() {
 
        
-        // if (m_BallIndexer.isTopsensor())  {    
-            // if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(5000)) {
+  
+            if (RobotContainer.getInstance().m_ballShooter.ready2Shoot(rpms)) {
                     BallIndexer.shootyMode = true;
-                   m_ballShooter.shoot();
-            // }
-        // }   
+                   
+            }
+         
 
     }
 
@@ -91,7 +91,7 @@ public class shoot extends CommandBase {
 
         m_ballShooter.stopMotor();
        BallIndexer.shootyMode= false;   
-       rpms = 0;    
+
         // BallIndexer.stopIndexer();
    }
 
