@@ -43,17 +43,17 @@ public class AutoRedRight extends SequentialCommandGroup {
         //      )    
         //  );
         new driveForward(7.8, m_Drive),
-        new DeployAcquisitionAuto(m_ballAcquisition).withTimeout(5),
+        new toggleAcquisition(m_ballAcquisition),
         new AcquireAuto(m_ballAcquisition).withTimeout(5),
-        new RetractAcquisitionAuto(m_ballAcquisition).withTimeout(5),
+        new toggleAcquisition(m_ballAcquisition),
         new turn(-218, m_Drive),
         new driveForward(11.18, m_Drive),
-        new DeployAcquisitionAuto(m_ballAcquisition).withTimeout(5),
+        new toggleAcquisition(m_ballAcquisition),
         new AcquireAuto(m_ballAcquisition).withTimeout(5),
-        new RetractAcquisitionAuto(m_ballAcquisition).withTimeout(5),
+        new toggleAcquisition(m_ballAcquisition),
         new turn(-29, m_Drive),
         new driveForward(6.4, m_Drive),
-        new ShootAuto(m_ballShooter).withTimeout(5)
+        new shoot(m_ballShooter).withTimeout(5)
         );
     }
 

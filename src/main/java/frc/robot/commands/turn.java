@@ -70,7 +70,7 @@ public class turn extends CommandBase {
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return /*m_drive.turnComplete(m_turnAmount);*/ false;
+        return m_drive.turnComplete(m_turnAmount);
     }
 
     @Override

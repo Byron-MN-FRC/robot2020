@@ -86,7 +86,7 @@ rightShoulderLimitSwitch = new DigitalInput(5);
  addChild("RightShoulderLimitSwitch", rightShoulderLimitSwitch);
  
 
-leftShoulder = new WPI_TalonFX(12);
+leftShoulder = new WPI_TalonFX(7);
  
  
 
@@ -94,7 +94,7 @@ leftElbow = new WPI_TalonSRX(8);
  
  
 
-rightShoulder = new WPI_TalonFX(9);
+rightShoulder = new WPI_TalonFX(12);
  
  
 

@@ -29,14 +29,14 @@ import frc.robot.commands.acquire;
 import frc.robot.commands.alexaFindBall;
 import frc.robot.commands.climbCommandGroup;
 import frc.robot.commands.cmdDriverCamera;
-import frc.robot.commands.deployAcquisition;
+import frc.robot.commands.toggleAcquisition;
 import frc.robot.commands.doNothing;
 import frc.robot.commands.driveWithJoystick;
 import frc.robot.commands.enableClimb;
 import frc.robot.commands.enableLimeLight;
 import frc.robot.commands.flip;
 import frc.robot.commands.manualMagazineDown;
-import frc.robot.commands.retractAcquisition;
+
 import frc.robot.commands.reverseAcquire;
 import frc.robot.commands.runIndexer;
 import frc.robot.commands.shoot;
@@ -161,10 +161,6 @@ final JoystickButton btnShoot = new JoystickButton(operatorTwo, 1);
 btnShoot.whileHeld(new shoot( m_ballShooter ) ,true);
     SmartDashboard.putData("btnShoot",new shoot( m_ballShooter ) );
 
-final JoystickButton btnRetractIntake = new JoystickButton(operatorOne, 11);        
-btnRetractIntake.whenReleased(new retractAcquisition( m_ballAcquisition ) ,false);
-    SmartDashboard.putData("btnRetractIntake",new retractAcquisition( m_ballAcquisition ) );
-
 final JoystickButton btnFlip = new JoystickButton(operatorOne, 12);        
 btnFlip.whenPressed(new flip( m_drive ) ,true);
     SmartDashboard.putData("btnFlip",new flip( m_drive ) );
@@ -177,9 +173,9 @@ final JoystickButton btnEnableClimb = new JoystickButton(operatorOne, 7);
 btnEnableClimb.whenPressed(new enableClimb() ,true);
     SmartDashboard.putData("btnEnableClimb",new enableClimb() );
 
-final JoystickButton btnDeployIntake = new JoystickButton(operatorOne, 11);        
-btnDeployIntake.whileHeld(new deployAcquisition( m_ballAcquisition ) ,false);
-    SmartDashboard.putData("btnDeployIntake",new deployAcquisition( m_ballAcquisition ) );
+final JoystickButton brnToggleAcquistion = new JoystickButton(operatorOne, 11);        
+brnToggleAcquistion.whenPressed(new toggleAcquisition( m_ballAcquisition ) ,false);
+    SmartDashboard.putData("brnToggleAcquistion",new toggleAcquisition( m_ballAcquisition ) );
 
 final JoystickButton btnAcquire = new JoystickButton(operatorOne, 1);        
 btnAcquire.whileHeld(new acquire( m_ballAcquisition ) ,false);

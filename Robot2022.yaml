@@ -135,7 +135,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: &id004 [CANID]
-          value: '12'
+          value: '9'
       Base: Talon SRX
       Name: beltMotorLeft
     - Children: []
@@ -157,7 +157,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: &id006 [DigitalChannel]
-          value: '5'
+          value: '7'
       Base: Digital Input
       Name: bottomSensor
     - Children: []
@@ -198,16 +198,6 @@ Children:
           value: '26'
       Base: Talon SRX
       Name: acquireMotor
-    - Children: []
-      Properties:
-        CAN ID: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id003
-          default: '2'
-          name: CAN ID
-          validators: *id004
-          value: '6'
-      Base: Talon SRX
-      Name: aquisitionDeploy
     Properties:
       Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Send to SmartDashboard, validators: null, value: false}
@@ -285,7 +275,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: *id009
-          value: '7'
+          value: '5'
       Base: Limit Switch
       Name: RightShoulderLimitSwitch
     - Children: []
@@ -315,7 +305,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '9'
+          value: '12'
       Base: Talon FX
       Name: rightShoulder
     - Children: []
@@ -480,7 +470,7 @@ Children:
           name: Command
           type: Command
           validators: *id011
-          value: deployAcquisition
+          value: toggleAcquisition
         Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
           name: Timeout, validators: null, value: 0.0}
         Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
@@ -490,9 +480,9 @@ Children:
           default: whenPressed
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
-      Name: btnDeployIntake
+      Name: brnToggleAcquistion
     - Children: []
       Properties:
         Interruptible: !!robotbuilder.data.properties.BooleanProperty {default: true,
@@ -598,41 +588,6 @@ Children:
           value: whenPressed
       Base: Joystick Button
       Name: btnFlip
-    - Children: []
-      Properties:
-        Interruptible: !!robotbuilder.data.properties.BooleanProperty {default: true,
-          name: Interruptible, validators: null, value: false}
-        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
-          name: Joystick, validators: null, value: operatorOne}
-        Parameters: !!robotbuilder.data.properties.ParametersProperty
-          default: []
-          name: Parameters
-          validators: null
-          value: []
-        Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id010
-          default: '1'
-          name: Button
-          validators: null
-          value: '11'
-        Command: !!robotbuilder.data.properties.TypeSelectionProperty
-          default: None
-          name: Command
-          type: Command
-          validators: *id011
-          value: retractAcquisition
-        Timeout: !!robotbuilder.data.properties.PositiveDoubleProperty {default: 0,
-          name: Timeout, validators: null, value: 0.0}
-        Add Timeout: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Add Timeout, validators: null, value: false}
-        When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id012
-          default: whenPressed
-          name: When to Run
-          validators: null
-          value: whenReleased
-      Base: Joystick Button
-      Name: btnRetractIntake
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: &id013 ['0', '1', '2', '3', '4', '5']
@@ -1022,29 +977,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
-    Name: retractAcquisition
-  - Children: []
-    Properties:
-      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
-        name: Autonomous Selection, validators: null, value: false}
-      Parameters: !!robotbuilder.data.properties.ParametersProperty
-        default: []
-        name: Parameters
-        validators: null
-        value: []
-      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
-        name: Run When Disabled, validators: null, value: false}
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: BallAcquisition}
-      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: []
-        name: Parameter presets
-        validators: null
-        value: []
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
-    Base: Command
-    Name: deployAcquisition
+    Name: toggleAcquisition
   - Children: []
     Properties:
       Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
@@ -1377,28 +1310,6 @@ Children:
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: Climb2Point
-  - Children: []
-    Properties:
-      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
-        name: Autonomous Selection, validators: null, value: false}
-      Parameters: !!robotbuilder.data.properties.ParametersProperty
-        default: []
-        name: Parameters
-        validators: null
-        value: []
-      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
-        name: Run When Disabled, validators: null, value: false}
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: BallShooter}
-      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: []
-        name: Parameter presets
-        validators: null
-        value: []
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
-    Base: Command
-    Name: ShootAuto
   - Children: []
     Properties:
       Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
