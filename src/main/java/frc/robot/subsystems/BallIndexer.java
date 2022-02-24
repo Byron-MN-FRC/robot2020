@@ -51,7 +51,7 @@ beltMotorRight = new WPI_TalonSRX(14);
  
  
 
-bottomSensor = new DigitalInput(5);
+bottomSensor = new DigitalInput(7);
  addChild("bottomSensor", bottomSensor);
  
 

@@ -13,8 +13,13 @@
   "Window": {
     "###/FMSInfo": {
       "Collapsed": "0",
-      "Pos": "431,192",
+      "Pos": "178,184",
       "Size": "169,167"
+    },
+    "###/LiveWindow/BallIndexer/bottomSensor": {
+      "Collapsed": "0",
+      "Pos": "60,60",
+      "Size": "200,54"
     },
     "###/LiveWindow/BallShooter": {
       "Collapsed": "0",
@@ -23,7 +28,7 @@
     },
     "###/SmartDashboard/Auto Mode": {
       "Collapsed": "0",
-      "Pos": "526,110",
+      "Pos": "319,380",
       "Size": "254,54"
     },
     "###/SmartDashboard/btnShoot": {
@@ -34,7 +39,7 @@
     "###DIO": {
       "Collapsed": "0",
       "Pos": "468,13",
-      "Size": "162,215"
+      "Size": "168,215"
     },
     "###FMS": {
       "Collapsed": "0",
@@ -44,7 +49,7 @@
     "###Joysticks": {
       "Collapsed": "0",
       "Pos": "47,304",
-      "Size": "796,183"
+      "Size": "796,73"
     },
     "###NetworkTables": {
       "Collapsed": "0",
