@@ -135,7 +135,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: &id004 [CANID]
-          value: '12'
+          value: '9'
       Base: Talon SRX
       Name: beltMotorLeft
     - Children: []
@@ -157,7 +157,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: &id006 [DigitalChannel]
-          value: '5'
+          value: '7'
       Base: Digital Input
       Name: bottomSensor
     - Children: []
@@ -275,7 +275,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: *id009
-          value: '7'
+          value: '5'
       Base: Limit Switch
       Name: RightShoulderLimitSwitch
     - Children: []
@@ -305,7 +305,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id002
-          value: '9'
+          value: '12'
       Base: Talon FX
       Name: rightShoulder
     - Children: []
