@@ -71,6 +71,7 @@ public class driveForward extends CommandBase {
     @Override
     public void end(boolean interrupted) {
         m_drive.stop();
+       
         System.out.println("Position reached Yay!");
     }
 
@@ -78,7 +79,7 @@ public class driveForward extends CommandBase {
     @Override
     public boolean isFinished() {
         double m_encoderUnits = Constants.encodeUnitsToFeet * m_distanceInFeet;
-        return/*(m_drive.atTarget(m_encoderUnits));  */  false;
+        return (m_drive.atTarget(m_encoderUnits));
     }
 
     @Override
