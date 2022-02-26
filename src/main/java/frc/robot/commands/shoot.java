@@ -64,9 +64,10 @@ public class shoot extends CommandBase {
         }  
         rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
         
+
    
          // Disable auto indexing 
-         
+        BallIndexer.shootyMode = false; 
   
      }
  
@@ -90,9 +91,10 @@ public class shoot extends CommandBase {
     public void end(boolean interrupted) {
 
         m_ballShooter.stopMotor();
+    
        BallIndexer.shootyMode= false;   
 
-        // BallIndexer.stopIndexer();
+       m_ballShooter.setMasterShootVelocity(0);
    }
 
     // Returns true when the command should end.

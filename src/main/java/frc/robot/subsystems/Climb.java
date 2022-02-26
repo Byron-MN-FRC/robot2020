@@ -109,6 +109,8 @@ rightElbow = new WPI_TalonFX(10);
     leftElbowEncoder = new DutyCycleEncoder(1);
     addChild("LeftElbowEncoder", leftElbowEncoder);
     }
+    // leftShoulderEncoder = new DutyCycleEncoder(0);
+    // addChild("leftShoulderEncoder", leftShoulderEncoder);
 
     @Override
     public void periodic() {

@@ -99,6 +99,9 @@ public class Robot extends TimedRobot {
     @Override
     public void disabledInit() {
         LimelightUtility.EnableDriverCamera(false);
+        RobotContainer.getInstance().m_ballIndexer.reinitializeIndexer();
+        
+        // RobotContainer.getInstance().m_ballShooter.setMasterShootVelocity(0);
     }
 
     @Override
@@ -111,7 +114,7 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousInit() {
         m_autonomousCommand = m_robotContainer.getAutonomousCommand();
-
+        RobotContainer.getInstance().m_ballIndexer.reinitializeIndexer();
         // schedule the autonomous command (example)
         if (m_autonomousCommand != null) {
             m_autonomousCommand.schedule();
@@ -134,6 +137,7 @@ public class Robot extends TimedRobot {
         if (m_autonomousCommand != null) {
             m_autonomousCommand.cancel();
         }
+        RobotContainer.getInstance().m_ballShooter.setMasterShootVelocity(0);
     }
 
     /**
