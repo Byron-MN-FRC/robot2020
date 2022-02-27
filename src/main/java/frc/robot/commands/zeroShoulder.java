@@ -61,6 +61,7 @@ public class zeroShoulder extends CommandBase {
     @Override
     public void end(boolean interrupted) {
         m_climb.stopLeftShoulder();
+        m_climb.zeroLeftShoulderEncoder();
     }
 
     // Returns true when the command should end.
