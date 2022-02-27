@@ -42,18 +42,29 @@ public class AutoRedRight extends SequentialCommandGroup {
         //          new command3(argsN, subsystem)
         //      )    
         //  );
-        new driveForward(7.8, m_Drive),
+        new teleopAutoShootCMD(m_ballShooter).withTimeout(3),
+        //new AutoPixyDrive(m_Drive),
+        // new driveForward(-5.5, m_Drive),
+        // new toggleAcquisition(m_ballAcquisition),
+        //new AutoPixyDrive(m_Drive),
         new toggleAcquisition(m_ballAcquisition),
-        new AcquireAuto(m_ballAcquisition).withTimeout(5),
-        new toggleAcquisition(m_ballAcquisition),
-        new turn(-218, m_Drive),
-        new driveForward(11.18, m_Drive),
-        new toggleAcquisition(m_ballAcquisition),
-        new AcquireAuto(m_ballAcquisition).withTimeout(5),
-        new toggleAcquisition(m_ballAcquisition),
-        new turn(-29, m_Drive),
-        new driveForward(6.4, m_Drive),
-        new shoot(m_ballShooter).withTimeout(5)
+        parallel(
+            new driveForward(-5.5, m_Drive),
+            new AcquireAuto(m_ballAcquisition).withTimeout(5)
+        )
+
+        // new driveForward(7.8, m_Drive),
+        // new toggleAcquisition(m_ballAcquisition),
+        // new AcquireAuto(m_ballAcquisition).withTimeout(5),
+        // new toggleAcquisition(m_ballAcquisition),
+        // new turn(-218, m_Drive),
+        // new driveForward(11.18, m_Drive),
+        // new toggleAcquisition(m_ballAcquisition),
+        // new AcquireAuto(m_ballAcquisition).withTimeout(5),
+        // new toggleAcquisition(m_ballAcquisition),
+        // new turn(-29, m_Drive),
+        // new driveForward(6.4, m_Drive),
+        // new shoot(m_ballShooter).withTimeout(5)
         );
     }
 

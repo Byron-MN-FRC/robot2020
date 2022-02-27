@@ -341,12 +341,12 @@ leftFollower = new WPI_TalonFX(2);
         rightMaster.configClosedLoopPeriod(1, closedLoopTimeMs, Constants.kTimeoutMs);
 
         // Motion Magic Configs
-        //_rightConfig.motionAcceleration = 9500; // (distance units per 100 ms) per second
-        //_rightConfig.motionCruiseVelocity = 17000; // distance units per 100 ms
+        _rightConfig.motionAcceleration = 9500; // (distance units per 100 ms) per second
+        _rightConfig.motionCruiseVelocity = 17000; // distance units per 100 ms
         _rightConfig.motionCurveStrength = 3;
-        _rightConfig.motionAcceleration = 2000; // (distance units per 100 ms) per
+        // _rightConfig.motionAcceleration = 2000; // (distance units per 100 ms) per
         // second
-         _rightConfig.motionCruiseVelocity = 4000; // distance units per 100 ms
+        //  _rightConfig.motionCruiseVelocity = 4000; // distance units per 100 ms
 
         // APPLY the config settings
         leftMaster.configAllSettings(_leftConfig);
