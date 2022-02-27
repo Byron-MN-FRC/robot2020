@@ -117,7 +117,7 @@ Children:
         validators: null
         value: []
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: idleBallShooter}
+        name: Default Command, type: Command, validators: null, value: idleShooter}
       Constants: !!robotbuilder.data.properties.ConstantsProperty
         default: []
         name: Constants
@@ -195,7 +195,7 @@ Children:
           default: '2'
           name: CAN ID
           validators: *id004
-          value: '26'
+          value: '5'
       Base: Talon SRX
       Name: acquireMotor
     - Children: []
@@ -1529,7 +1529,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
-    Name: idleBallShooter
+    Name: idleShooter
   - Children: []
     Properties:
       Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,

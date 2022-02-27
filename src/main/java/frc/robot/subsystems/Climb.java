@@ -177,11 +177,23 @@ rightElbow = new WPI_TalonFX(10);
     public void startLeftShoulder(double speed) {
         leftShoulder.set(speed);
     }
+    public void startRightElbow(double speed) {
+        rightElbow.set(speed);
+    }
+    public void startRightShoulder(double speed){
+        rightShoulder.set(speed);
+    }
     public void stopLeftElbow() {
         leftElbow.stopMotor();
     }
     public void stopLeftShoulder() {
         leftShoulder.stopMotor();
+    }
+    public void stopRightElbow(){
+        rightElbow.stopMotor();
+    }
+    public void stopRightShoulder(){
+        rightShoulder.stopMotor();
     }
     public boolean isLeftShoulder() {
         return !leftShoulderLimitSwitch.get();

@@ -39,6 +39,7 @@ import frc.robot.commands.manualMagazineDown;
 import frc.robot.commands.reverseAcquire;
 import frc.robot.commands.runIndexer;
 import frc.robot.commands.shoot;
+import frc.robot.commands.teleopAutoShootCMD;
 import frc.robot.commands.toggeGearShift;
 import frc.robot.commands.toggleAcquisition;
 import frc.robot.commands.togglePixyColor;
@@ -163,8 +164,8 @@ btnEnableLimelight.whileHeld(new enableLimeLight( m_drive ) ,true);
     SmartDashboard.putData("btnEnableLimelight",new enableLimeLight( m_drive ) );
 
 final JoystickButton btnShoot = new JoystickButton(operatorTwo, 1);        
-btnShoot.whileHeld(new shoot( m_ballShooter ) ,true);
-    SmartDashboard.putData("btnShoot",new shoot( m_ballShooter ) );
+btnShoot.whileHeld(new teleopAutoShootCMD( m_ballShooter ) ,true);
+    //SmartDashboard.putData("btnShoot",new shoot( m_ballShooter ) );
 
 final JoystickButton btnGearShift = new JoystickButton(operatorOne, 10);        
 btnGearShift.whenPressed(new toggeGearShift( m_shifter ) ,true);
