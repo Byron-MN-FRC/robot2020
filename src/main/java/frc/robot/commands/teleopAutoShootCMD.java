@@ -64,7 +64,7 @@ public class teleopAutoShootCMD extends CommandBase {
             area = LimelightUtility.TargetAreaPercentage * 100; 
         } else {
             System.out.println("No target");
-            area = 50;
+            area = 0;
         }  
         rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
         m_ballShooter.setMasterShootVelocity(rpms);
