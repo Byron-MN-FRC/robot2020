@@ -54,7 +54,7 @@ public class Robot extends TimedRobot {
         // server.startAutomaticCapture("forward",0);
         LimelightUtility.EnableDriverCamera(true);
         LimelightUtility.StreamingMode(LimelightUtility.StreamMode.PIPMain);
-        LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
+        //LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
 
 
         // 2022 - The robot needs to konw the current alliance color.   The following will read the alliance

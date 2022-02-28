@@ -67,6 +67,7 @@ public class teleopAutoShootCMD extends CommandBase {
             area = 50;
         }  
         rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
+        rpms = area *30 + 5600;
         // Temporary read from screen
         // rpms = SmartDashboard.getNumber("sdShoot RPMS", 0);
         //hoodEncoderUnits = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[1];
