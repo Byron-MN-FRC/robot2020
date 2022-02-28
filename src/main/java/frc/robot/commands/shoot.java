@@ -69,7 +69,7 @@ public class shoot extends CommandBase {
          // Disable auto indexing 
 
          BallIndexer.shootyMode = false;
-
+        //indexBeltRunner = new runIndexBelt(.75, RobotContainer.getInstance().m_ballIndexer);
   
      }
  

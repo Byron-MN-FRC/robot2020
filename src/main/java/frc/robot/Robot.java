@@ -54,7 +54,7 @@ public class Robot extends TimedRobot {
         // server.startAutomaticCapture("forward",0);
         LimelightUtility.EnableDriverCamera(true);
         LimelightUtility.StreamingMode(LimelightUtility.StreamMode.PIPMain);
-        LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
+        //LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
 
 
         // 2022 - The robot needs to konw the current alliance color.   The following will read the alliance
@@ -84,10 +84,10 @@ public class Robot extends TimedRobot {
         // and running subsystem periodic() methods.  This must be called from the robot's periodic
         // block in order for anything in the Command-based framework to work.
         CommandScheduler.getInstance().run();
-        double IR = m_colorSensor.getIR();
+        //double IR = m_colorSensor.getIR();
 
-        SmartDashboard.putNumber("Test/IR", IR);
-        SmartDashboard.putBoolean("Test/Black Line", IR <= 6);
+        // SmartDashboard.putNumber("Test/IR", IR);
+        // SmartDashboard.putBoolean("Test/Black Line", IR <= 6);
         
     }
 

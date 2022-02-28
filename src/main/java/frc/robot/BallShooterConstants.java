@@ -7,10 +7,10 @@ import java.util.TreeMap;
 public class BallShooterConstants {
 	//hood  Constants 
 	public final static double kHoodUpEncoderMax = -10920; // 3900;
-	public final static double kHoodPositionTolerance = 50;
+	public final static double kHoodPositionTolerance = 2048;
 	
 	// Shoot motor Constants
-	public final static double kShootMotorRPMTolerance = 2000;//sensor units
+	public final static double kShootMotorRPMTolerance = 50;//sensor units
 	public static final boolean kEnableCurrentLimiting_BS = true;
 
 	// Current (amp) limit
