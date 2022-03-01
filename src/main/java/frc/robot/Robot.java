@@ -52,7 +52,7 @@ public class Robot extends TimedRobot {
 
         // server = CameraServer.getInstance();
         // server.startAutomaticCapture("forward",0);
-        LimelightUtility.EnableDriverCamera(true);
+        //LimelightUtility.EnableDriverCamera(true);
         LimelightUtility.StreamingMode(LimelightUtility.StreamMode.PIPMain);
         //LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
 

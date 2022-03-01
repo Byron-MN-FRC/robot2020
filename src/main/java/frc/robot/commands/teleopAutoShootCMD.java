@@ -59,47 +59,37 @@ public class teleopAutoShootCMD extends CommandBase {
     @Override
     public void initialize() {
         LimelightUtility.RefreshTrackingData();
-        // Lookup optimal RPMS &  Hood encoder units based on area (if target seen)
+        // Lookup optimal RPMS based on area (if target seen)
         if (LimelightUtility.ValidTargetFound()) {
             area = LimelightUtility.TargetAreaPercentage * 100; 
         } else {
-   //         System.out.println("No target");
-            area = 50;
+            System.out.println("No target");
+            area = 0;
         }  
         rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
+
+        //m_ballShooter.setMasterShootVelocity(rpms);
+
         rpms = area *30 + 5600;
-        // Temporary read from screen
-        // rpms = SmartDashboard.getNumber("sdShoot RPMS", 0);
-        //hoodEncoderUnits = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[1];
-        // Temporary read from screen
-        // hoodEncoderUnits = SmartDashboard.getNumber("sdHood Position", 0);
-        
-        //numberOfBalls = RobotContainer.getInstance().m_ballIndexer.ballCount(); 
-        //Robot.ballShooter.prepareToShoot(rpms,hoodEncoderUnits);
-        //setTimeout(BallShooterConstants.teleopAutoShootCmdTimeout);
         RobotContainer.getInstance().m_ballIndexer.setAutoIndex(false);
         //indexBeltRunner = new runIndexBelt(BallIndexerConstants.indexMotorSpeed, RobotContainer.getInstance().m_ballIndexer);
         indexBeltRunner = new runIndexBelt(RobotContainer.getInstance().m_ballIndexer);
-        // SmartDashboard.putNumber("Shooter/HoodTarget", hoodEncoderUnits);
-        // SmartDashboard.putNumber("Shooter/ShootTarget", rpms);
+        
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
+        System.out.println("area = " + area);
+        System.out.println("RPMS = " + rpms);
         if (m_ballShooter.ready2Shoot(rpms)) {
             if (!indexBeltRunner.isScheduled()) {
-                // System.out.println("teleopAutoShootCMD is Running belt motor");
-               //  Timer.delay(0.5);
                 indexBeltRunner.schedule();
                 
-            } /*else if(!RobotContainer.getInstance().m_ballIndexer.ballPresent(1)) {
-                RobotContainer.getInstance().m_ballAcquisition.startAquireMotor();
-            }*/
-        } else {
-            if (!indexBeltRunner.isFinished()) {
-    //            System.out.println("teleopAutoShootCMD is Cancelling belt motor");
                 
+            } 
+        } else {
+            if (!indexBeltRunner.isFinished()) {            
                 indexBeltRunner.cancel();   
             }
        }
@@ -108,21 +98,12 @@ public class teleopAutoShootCMD extends CommandBase {
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-            //Robot.ballShooter.stopShooter();
             if (!indexBeltRunner.isFinished()) {
+                SmartDashboard.putString("indexbelt", "canceling");            
+   
                 indexBeltRunner.cancel();
             }
-            RobotContainer.getInstance().m_ballIndexer.setAutoIndex(true);
-        
-            // SmartDashboard.putNumber("Shooter/HoodTarget", 0);
-            // SmartDashboard.putNumber("Shooter/ShootTarget", 0);
-            // SmartDashboard.putNumber("Shooter/ShootMotorError", 0);
-            // SmartDashboard.putBoolean("Shooter/ShootMotorReady",false);
-            // SmartDashboard.putNumber("Shooter/HoodError", 0);
-            // SmartDashboard.putBoolean("Shooter/HoodReady", false);
-            // SmartDashboard.putBoolean("Shooter/ReadyToShoot", false);
-
-     
+            RobotContainer.getInstance().m_ballIndexer.setAutoIndex(true);   
         }
 
     // Returns true when the command should end.

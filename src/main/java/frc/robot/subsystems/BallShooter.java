@@ -80,7 +80,6 @@ shootMotor = new WPI_TalonFX(13);
     public boolean ready2Shoot(final double rpms) {
         // final double velocityPer100ms = rpmToVelocityPer100ms(rpms);
         masterShootRPM = rpms;
-
         boolean iwthresh = isWithinThreshold();
        
         // report debugging information
@@ -120,7 +119,15 @@ shootMotor = new WPI_TalonFX(13);
      */
     public boolean isWithinThreshold() {
         /* Check if closed loop error is within the threshld */
-        double closedLpErr = Math.abs(shootMotor.getClosedLoopError(BallShooterConstants.kPIDLoopIdx));
+        //double closedLpErr = Math.abs(shootMotor.getClosedLoopError(BallShooterConstants.kPIDLoopIdx));
+        double closedLpErr = shootMotor.getClosedLoopTarget() - shootMotor.getSelectedSensorVelocity();
+        System.out.println("------------------------------------------------------");
+        System.out.print("Closed Loop Error = ");
+        System.out.println(closedLpErr);
+        System.out.print("Closed Loop Target = ");
+        System.out.println(shootMotor.getClosedLoopTarget());
+        System.out.print("shootMotor.getSelectedSensorVelocity() = ");
+        System.out.println(shootMotor.getSelectedSensorVelocity());
 
 
         if (closedLpErr < BallShooterConstants.kShootMotorRPMTolerance) {
@@ -202,11 +209,12 @@ shootMotor = new WPI_TalonFX(13);
 
      }
      public void idleSubsystems(){
-        if (teleopWithIdle) {
+      if (teleopWithIdle) {
             masterShootRPM = 4000;
         } else {
             masterShootRPM = 0;
         }
+        
      }
     
      

@@ -10,7 +10,7 @@ public class BallShooterConstants {
 	public final static double kHoodPositionTolerance = 2048;
 	
 	// Shoot motor Constants
-	public final static double kShootMotorRPMTolerance = 50;//sensor units
+	public final static double kShootMotorRPMTolerance = 300;//sensor units
 	public static final boolean kEnableCurrentLimiting_BS = true;
 
 	// Current (amp) limit
@@ -76,9 +76,18 @@ public class BallShooterConstants {
 			// put( 80, new double[] { -5100, -9230}); //red
 			// put( 70, new double[] { -5600, -9360}); 
 
-		put(0, new double[] { 3000});
-		put(450, new double[] { 4000});
-		put(250, new double[] { 4250});
+		
+		
+
+		put(10, new double[] {5300});
+		put(20, new double[] {5100});
+		put(22, new double[] {5000});
+		put(25, new double[] {4900});
+		put(27, new double[] {4700});
+		put(30, new double[] {4600});
+		put(40, new double[] {4400});
+		put(50, new double[] {4300});
+		put(0, new double[] {3200});		
 		
 
 	 }
