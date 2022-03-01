@@ -44,7 +44,7 @@ acquireMotor = new WPI_TalonSRX(5);
  
  
 
-acquisitionDeployer = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
+acquisitionDeployer = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 7, 6);
  addChild("acquisitionDeployer", acquisitionDeployer);
  
 

@@ -16,6 +16,7 @@ import com.revrobotics.ColorSensorV3;
 
 import edu.wpi.first.hal.FRCNetComm.tInstances;
 import edu.wpi.first.hal.FRCNetComm.tResourceType;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.hal.HAL;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
@@ -43,14 +44,21 @@ public class Robot extends TimedRobot {
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
+    CameraServer server;
+
     @Override
     public void robotInit() {
         // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
         // autonomous chooser on the dashboard.
+    
+    
         m_robotContainer = RobotContainer.getInstance();
         HAL.report(tResourceType.kResourceType_Framework, tInstances.kFramework_RobotBuilder);
+        m_robotContainer.m_climb.retractHardStop();
+        server = CameraServer.getInstance();
 
         // server = CameraServer.getInstance();
+        server.startAutomaticCapture("forward", 0);
         // server.startAutomaticCapture("forward",0);
         //LimelightUtility.EnableDriverCamera(true);
         LimelightUtility.StreamingMode(LimelightUtility.StreamMode.PIPMain);
