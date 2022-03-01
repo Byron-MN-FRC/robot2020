@@ -67,7 +67,10 @@ public class teleopAutoShootCMD extends CommandBase {
             area = 0;
         }  
         rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
-        m_ballShooter.setMasterShootVelocity(rpms);
+
+        //m_ballShooter.setMasterShootVelocity(rpms);
+
+        rpms = area *30 + 5600;
         RobotContainer.getInstance().m_ballIndexer.setAutoIndex(false);
         //indexBeltRunner = new runIndexBelt(BallIndexerConstants.indexMotorSpeed, RobotContainer.getInstance().m_ballIndexer);
         indexBeltRunner = new runIndexBelt(RobotContainer.getInstance().m_ballIndexer);
