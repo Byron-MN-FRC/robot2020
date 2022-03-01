@@ -76,7 +76,7 @@ acquisitionDeployer = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4)
 
     public void toggleAcquisition() {
         //System.out.println("Aquisition toggled");
-        acquisitionDeployer.toggle();
+        // acquisitionDeployer.toggle();
     }
 
 
