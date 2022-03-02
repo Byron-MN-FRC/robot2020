@@ -205,10 +205,10 @@ leftHardStop = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
         rightShoulder.stopMotor();
     }
     public boolean isLeftShoulder() {
-        return !leftShoulderLimitSwitch.get();
+        return leftShoulderLimitSwitch.get();
     }
     public boolean isLeftElbow() {
-    return !leftElbowLimitSwitch.get();
+    return leftElbowLimitSwitch.get();
     }
     public boolean isRightElbow() {
         if (rightElbowLimitSwitch.getValue() > 10) {
