@@ -38,9 +38,12 @@ public class climbCommandGroup extends SequentialCommandGroup {
         //          new command3(argsN, subsystem)
         //      )    
         //  );
-       new zeroLeftShoulder(climb),
-        new zeroLeftElbow(climb),
-        new Climb2Point(5, 4, climb)
+        new zeroLeftShoulder(climb)
+        // new zeroLeftElbow(climb),
+        // new Climb2Point(63, 3, climb),
+        // new climbToHook(climb),
+        // new climbOnHook(climb),
+        // new ClimbHardStop(climb)
         );
     }
 

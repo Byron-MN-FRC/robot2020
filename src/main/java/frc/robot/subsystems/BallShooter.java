@@ -130,7 +130,7 @@ shootMotor = new WPI_TalonFX(13);
         System.out.println(shootMotor.getSelectedSensorVelocity());
 
 
-        if (closedLpErr < BallShooterConstants.kShootMotorRPMTolerance) {
+        if (Math.abs(closedLpErr) < BallShooterConstants.kShootMotorRPMTolerance) {
             ++_withinThresholdLoops;
             toConsoleln("incrementing threshold loops: " + _withinThresholdLoops);
         } else {

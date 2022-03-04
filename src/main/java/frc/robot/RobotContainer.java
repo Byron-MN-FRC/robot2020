@@ -25,6 +25,7 @@ import frc.robot.commands.AutoBlueRight;
 import frc.robot.commands.AutoPixyDrive;
 import frc.robot.commands.AutoRedLeft;
 import frc.robot.commands.AutoRedRight;
+import frc.robot.commands.ClimbHardStop;
 import frc.robot.commands.acquire;
 import frc.robot.commands.alexaFindBall;
 import frc.robot.commands.climbCommandGroup;
@@ -38,11 +39,12 @@ import frc.robot.commands.idleShooter;
 import frc.robot.commands.manualMagazineDown;
 import frc.robot.commands.reverseAcquire;
 import frc.robot.commands.runIndexer;
-import frc.robot.commands.shoot;
 import frc.robot.commands.teleopAutoShootCMD;
 import frc.robot.commands.toggeGearShift;
 import frc.robot.commands.toggleAcquisition;
 import frc.robot.commands.togglePixyColor;
+import frc.robot.commands.zeroLeftElbow;
+import frc.robot.commands.zeroLeftShoulder;
 import frc.robot.subsystems.BallAcquisition;
 import frc.robot.subsystems.BallIndexer;
 import frc.robot.subsystems.BallShooter;
@@ -152,8 +154,8 @@ btnMagazineOut.whileHeld(new runIndexer( m_ballIndexer ) ,true);
     SmartDashboard.putData("btnMagazineOut",new runIndexer( m_ballIndexer ) );
 
 final JoystickButton btnEnableClimbTwo = new JoystickButton(operatorTwo, 7);        
-btnEnableClimbTwo.whenPressed(new enableClimb() ,true);
-    SmartDashboard.putData("btnEnableClimbTwo",new enableClimb() );
+btnEnableClimbTwo.whenPressed(new climbCommandGroup(m_climb) ,true);
+    //SmartDashboard.putData("btnEnableClimbTwo",new climbCommandGroup() );
 
 final JoystickButton btnMagazineIn = new JoystickButton(operatorTwo, 11);        
 btnMagazineIn.whileHeld(new manualMagazineDown() ,true);
@@ -164,8 +166,12 @@ btnEnableLimelight.whileHeld(new enableLimeLight( m_drive ) ,true);
     SmartDashboard.putData("btnEnableLimelight",new enableLimeLight( m_drive ) );
 
 final JoystickButton btnShoot = new JoystickButton(operatorTwo, 1);        
-btnShoot.whileHeld(new shoot( m_ballShooter ) ,true);
-    SmartDashboard.putData("btnShoot",new shoot( m_ballShooter ) );
+btnShoot.whileHeld(new teleopAutoShootCMD( m_ballShooter ) ,true);
+    //SmartDashboard.putData("btnShoot",new shoot( m_ballShooter ) );
+
+final JoystickButton btnHardStopTest = new JoystickButton(operatorOne, 8);        
+btnHardStopTest.whileHeld(new ClimbHardStop( m_climb ) ,true);
+    SmartDashboard.putData("btnHardStopTest",new ClimbHardStop( m_climb ) );
 
 final JoystickButton btnGearShift = new JoystickButton(operatorOne, 10);        
 btnGearShift.whenPressed(new toggeGearShift( m_shifter ) ,true);
