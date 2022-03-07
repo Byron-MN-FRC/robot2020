@@ -68,6 +68,7 @@ public class Climb2Point extends CommandBase {
             }else {
                 m_climb.stopLeftShoulder();
             }
+            System.out.println("JFDKSLFJDSKLJFDSLK:");
         //}
         // if (m_side == ("right")) {
         //     if (m_climb.leftArmElbowMath(m_BarX, m_BarY)) {

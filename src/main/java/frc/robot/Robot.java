@@ -144,7 +144,9 @@ public class Robot extends TimedRobot {
         if (m_autonomousCommand != null) {
             m_autonomousCommand.cancel();
         }
+        LimelightUtility.WriteDouble("ledMode", 1);
         RobotContainer.getInstance().m_ballShooter.setMasterShootVelocity(0);
+
     }
 
     /**

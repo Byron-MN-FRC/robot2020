@@ -49,7 +49,7 @@ public class ClimbHardStop extends CommandBase {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-        m_climb.activateHardStop();
+        m_climb.toggleStop();
     }
 
     // Called every time the scheduler runs while the command is scheduled.
