@@ -112,6 +112,7 @@ leftFollower = new WPI_TalonFX(2);
     public void periodic() {
         // This method will be called once per scheduler run
         SmartDashboard.putBoolean("DriverDashboard/Pixy Chase Color", this.chaseColor == 1);
+        //SmartDashboard.putBoolean("Pixy Target Found ", (PixyCamera.getBiggestBlock(chaseColor)) !=null);
     }
 
     @Override

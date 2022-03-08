@@ -57,17 +57,19 @@ public class Climb2Point extends CommandBase {
     @Override
     public void execute() {
         // if (m_side == ("left")) {
-        //     if (m_climb.leftArmElbowMath(m_BarX, m_BarY)) {
-        //         m_climb.startLeftElbow(.3);
-        //     }else {
-        //         m_climb.stopLeftElbow();
-        //     }
-        //     if (m_climb.leftArmShoulderMath(m_BarX, m_BarY)) {
-        //         m_climb.startLeftShoulder(.3);
-        //     }else {
-        //         m_climb.stopLeftShoulder();
-        //     }
-        // }
+             
+            if (m_climb.leftArmElbowMath(m_BarX, m_BarY)) {
+                m_climb.startLeftElbow(.3);
+            }else {
+                m_climb.stopLeftElbow();
+            }
+            if (m_climb.leftArmShoulderMath(m_BarX, m_BarY)) {
+                m_climb.startLeftShoulder(-.3);
+            }else {
+                m_climb.stopLeftShoulder();
+            }
+            System.out.println("JFDKSLFJDSKLJFDSLK:");
+        //}
         // if (m_side == ("right")) {
         //     if (m_climb.leftArmElbowMath(m_BarX, m_BarY)) {
         //         m_climb.startLeftElbow(.3);
