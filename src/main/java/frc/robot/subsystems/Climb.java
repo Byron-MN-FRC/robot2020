@@ -44,10 +44,8 @@ private DigitalInput leftShoulderLimitSwitch;
 private AnalogInput rightHandLimitSwitch;
 private AnalogInput rightElbowLimitSwitch;
 private AnalogInput rightShoulderLimitSwitch;
-// private WPI_TalonSRX leftShoulder;
-private WPI_TalonFX leftShoulder;
-// private WPI_TalonFX leftElbow;
-private WPI_TalonSRX leftElbow;
+private WPI_TalonSRX leftShoulder;
+private WPI_TalonFX leftElbow;
 private WPI_TalonSRX rightShoulder;
 private WPI_TalonFX rightElbow;
 private DoubleSolenoid leftHardStop;
@@ -94,16 +92,15 @@ rightShoulderLimitSwitch = new AnalogInput(2);
  addChild("RightShoulderLimitSwitch", rightShoulderLimitSwitch);
  
 
-// leftShoulder = new WPI_TalonSRX(12);
-leftShoulder = new WPI_TalonFX(8);
-                             
-
-// leftElbow = new WPI_TalonFX(8);
-leftElbow = new WPI_TalonSRX(12);
+leftShoulder = new WPI_TalonSRX(7);
  
  
 
-rightShoulder = new WPI_TalonSRX(7);
+leftElbow = new WPI_TalonFX(8);
+ 
+ 
+
+rightShoulder = new WPI_TalonSRX(12);
  
  
 
