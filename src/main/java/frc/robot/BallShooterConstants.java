@@ -79,15 +79,28 @@ public class BallShooterConstants {
 		
 		
 
-		put(10, new double[] {5300});
-		put(20, new double[] {5100});
-		put(22, new double[] {5000});
-		put(25, new double[] {4900});
-		put(27, new double[] {4700});
-		put(30, new double[] {4600});
-		put(40, new double[] {4400});
-		put(50, new double[] {4300});
-		put(0, new double[] {3200});		
+		// put(10, new double[] {5300});
+		// put(20, new double[] {5100});
+		// put(22, new double[] {5000});
+		// put(25, new double[] {4900});
+		// put(27, new double[] {4700});
+		// put(30, new double[] {4600});
+		// put(40, new double[] {4400});
+		// put(50, new double[] {4300});
+		// put(0, new double[] {3200});
+		
+		
+
+double hardDifference = 900;
+		put(10, new double[] {5300-hardDifference});
+		put(20, new double[] {5100-hardDifference});
+		put(22, new double[] {5000-hardDifference});
+		put(25, new double[] {4900-hardDifference});
+		put(27, new double[] {4700-hardDifference});
+		put(30, new double[] {4600-hardDifference});
+		put(40, new double[] {4550-hardDifference});
+		put(50, new double[] {4300-hardDifference});
+		put(0, new double[] {3200-hardDifference});
 		
 
 	 }
