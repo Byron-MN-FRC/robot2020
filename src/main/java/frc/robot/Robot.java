@@ -16,6 +16,7 @@ import com.revrobotics.ColorSensorV3;
 
 import edu.wpi.first.hal.FRCNetComm.tInstances;
 import edu.wpi.first.hal.FRCNetComm.tResourceType;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.hal.HAL;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
@@ -43,18 +44,25 @@ public class Robot extends TimedRobot {
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
+    CameraServer server;
+
     @Override
     public void robotInit() {
         // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
         // autonomous chooser on the dashboard.
+    
+    
         m_robotContainer = RobotContainer.getInstance();
         HAL.report(tResourceType.kResourceType_Framework, tInstances.kFramework_RobotBuilder);
+        m_robotContainer.m_climb.retractHardStop();
+        server = CameraServer.getInstance();
 
         // server = CameraServer.getInstance();
+        server.startAutomaticCapture("forward", 0);
         // server.startAutomaticCapture("forward",0);
         //LimelightUtility.EnableDriverCamera(true);
         LimelightUtility.StreamingMode(LimelightUtility.StreamMode.PIPMain);
-        //LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
+        LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
 
 
         // 2022 - The robot needs to konw the current alliance color.   The following will read the alliance
@@ -84,10 +92,10 @@ public class Robot extends TimedRobot {
         // and running subsystem periodic() methods.  This must be called from the robot's periodic
         // block in order for anything in the Command-based framework to work.
         CommandScheduler.getInstance().run();
-        //double IR = m_colorSensor.getIR();
+        double IR = m_colorSensor.getIR();
 
-        // SmartDashboard.putNumber("Test/IR", IR);
-        // SmartDashboard.putBoolean("Test/Black Line", IR <= 6);
+        SmartDashboard.putNumber("IR", IR);
+        SmartDashboard.putBoolean("Climb Line", IR <= 6);
         
     }
 
@@ -136,7 +144,9 @@ public class Robot extends TimedRobot {
         if (m_autonomousCommand != null) {
             m_autonomousCommand.cancel();
         }
+        LimelightUtility.WriteDouble("ledMode", 1);
         RobotContainer.getInstance().m_ballShooter.setMasterShootVelocity(0);
+
     }
 
     /**
