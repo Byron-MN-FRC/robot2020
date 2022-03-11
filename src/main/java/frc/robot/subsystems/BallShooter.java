@@ -51,7 +51,7 @@ private WPI_TalonFX shootMotor;
     private double masterShootRPM = 0;
     public boolean teleopWithIdle = false;
     private Integer currentCycle = 0;
-    private double poggers = 0;
+    private double averagedLimelight = 0;
     private Integer ooga = 0;
     
     public BallShooter() {
@@ -224,12 +224,11 @@ shootMotor = new WPI_TalonFX(13);
         int[] x = {10};
         Array.newInstance(Double.class, x);
         Array.setDouble(x, currentCycle, LimelightUtility.TargetAreaPercentage);
-        poggers = (Array.getDouble(x, 1)+Array.getDouble(x, 2)+Array.getDouble(x, 3)+Array.getDouble(x, 4)+Array.getDouble(x, 5)+Array.getDouble(x, 6)+Array.getDouble(x, 7)+Array.getDouble(x, 8)+Array.getDouble(x, 9)+Array.getDouble(x, 10)/10);
+        averagedLimelight = (Array.getDouble(x, 1)+Array.getDouble(x, 2)+Array.getDouble(x, 3)+Array.getDouble(x, 4)+Array.getDouble(x, 5)+Array.getDouble(x, 6)+Array.getDouble(x, 7)+Array.getDouble(x, 8)+Array.getDouble(x, 9)+Array.getDouble(x, 10)/10);
         while (ooga != 10){
          ooga = ooga+1;
-         if ((poggers-10) >= (Array.getDouble(x, ooga)) || (Array.getDouble(x, ooga)) <= (poggers+10)) {
+         if ((averagedLimelight-10) >= (Array.getDouble(x, ooga)) || (Array.getDouble(x, ooga)) <= (averagedLimelight+10)) {
             //Array.setDouble(x, ooga, null);
-            
         }   
         }
          return LimelightUtility.TargetAreaPercentage;
