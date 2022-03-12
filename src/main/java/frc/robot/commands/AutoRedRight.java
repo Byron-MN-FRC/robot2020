@@ -35,6 +35,7 @@ public class AutoRedRight extends SequentialCommandGroup {
         new enableLimeLight(m_Drive).withTimeout(1),
         new teleopAutoShootCMD(m_ballShooter).withTimeout(5),
         new driveForward(-.2, m_Drive),
+        new toggleAcquisition(m_ballAcquisition),
         new AutoPixyDrive(m_Drive),
         new acquire(m_ballAcquisition),
         new turn(90, m_Drive),
