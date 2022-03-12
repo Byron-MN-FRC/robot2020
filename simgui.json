@@ -70,6 +70,9 @@
       "/LiveWindow/Climb/lefthandLimitSwitch": "Digital Input",
       "/LiveWindow/Drive": "Subsystem",
       "/LiveWindow/Drive/differentialDrive": "DifferentialDrive",
+      "/LiveWindow/Shifter": "Subsystem",
+      "/LiveWindow/Ungrouped/DigitalInput[1]": "Digital Input",
+      "/LiveWindow/Ungrouped/DigitalInput[6]": "Digital Input",
       "/LiveWindow/Ungrouped/Scheduler": "Scheduler",
       "/LiveWindow/Ungrouped/Talon FX [0]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon FX [10]": "Motor Controller",
@@ -77,6 +80,7 @@
       "/LiveWindow/Ungrouped/Talon FX [13]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon FX [2]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon FX [7]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon FX [8]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon FX [9]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon SRX [12]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon SRX [14]": "Motor Controller",
@@ -84,6 +88,7 @@
       "/LiveWindow/Ungrouped/Talon SRX [26]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon SRX [5]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon SRX [6]": "Motor Controller",
+      "/LiveWindow/Ungrouped/Talon SRX [7]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon SRX [8]": "Motor Controller",
       "/LiveWindow/Ungrouped/Talon SRX [9]": "Motor Controller",
       "/SmartDashboard/Auto Mode": "String Chooser",
@@ -98,6 +103,8 @@
       "/SmartDashboard/btnEnableLimelight": "Command",
       "/SmartDashboard/btnFindBall": "Command",
       "/SmartDashboard/btnFlip": "Command",
+      "/SmartDashboard/btnGearShift": "Command",
+      "/SmartDashboard/btnHardStopTest": "Command",
       "/SmartDashboard/btnIndexer": "Command",
       "/SmartDashboard/btnMagazineDown": "Command",
       "/SmartDashboard/btnMagazineIn": "Command",
@@ -111,6 +118,7 @@
       "/SmartDashboard/climbCommandGroup": "Command",
       "/SmartDashboard/enableLimeLight": "Command",
       "/SmartDashboard/runIndexer": "Command",
+      "/SmartDashboard/toggeGearShift": "Command",
       "/SmartDashboard/togglePixyColor": "Command"
     },
     "windows": {
@@ -120,6 +128,16 @@
         }
       },
       "/LiveWindow/BallIndexer/bottomSensor": {
+        "window": {
+          "visible": true
+        }
+      },
+      "/LiveWindow/Drive/differentialDrive": {
+        "window": {
+          "visible": true
+        }
+      },
+      "/LiveWindow/Ungrouped/Talon FX [13]": {
         "window": {
           "visible": true
         }

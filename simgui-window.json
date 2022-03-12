@@ -26,6 +26,16 @@
       "Pos": "60,60",
       "Size": "218,110"
     },
+    "###/LiveWindow/Drive/differentialDrive": {
+      "Collapsed": "0",
+      "Pos": "60,60",
+      "Size": "300,350"
+    },
+    "###/LiveWindow/Ungrouped/Talon FX [13]": {
+      "Collapsed": "0",
+      "Pos": "384,163",
+      "Size": "217,54"
+    },
     "###/SmartDashboard/Auto Mode": {
       "Collapsed": "0",
       "Pos": "319,380",
@@ -39,7 +49,7 @@
     "###DIO": {
       "Collapsed": "0",
       "Pos": "468,13",
-      "Size": "168,215"
+      "Size": "162,192"
     },
     "###FMS": {
       "Collapsed": "0",
