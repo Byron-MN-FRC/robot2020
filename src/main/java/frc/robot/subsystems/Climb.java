@@ -264,7 +264,7 @@ leftHardStop = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
         leftHardStop.toggle();
     }
     public void manualClimber(Joystick joystickP1){
-        climbMode=true;
+        
         if (climbMode){
         double x = joystickP1.getX();
         // if (l);
