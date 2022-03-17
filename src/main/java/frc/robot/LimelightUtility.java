@@ -40,6 +40,11 @@ public class LimelightUtility {
     static public double Camera3dTranslation_yaw;
     static public double Camera3dTranslation_roll;
 
+    static public boolean EnableTASmoothing = false;
+    static public int SmoothingSampleMS = 100;
+    static private SensorSmoother smoother = new SensorSmoother(100);
+
+
     static public void RefreshTrackingData() {
         var table = NetworkTableInstance.getDefault().getTable("limelight");
         tv = table.getEntry("tv").getDouble(0);
@@ -57,7 +62,11 @@ public class LimelightUtility {
 
         TargetHorizontalOffset          = tx;
         TargetVerticalOffset            = ty;
-        TargetAreaPercentage            = ta;
+        if (EnableTASmoothing){
+            TargetAreaPercentage = smoother.GetAverage(ta);
+        } else {
+            TargetAreaPercentage        = ta;
+        }
         TargetSkew                      = ts;
         PipelineLatency                 = tl;
         TargetSideLengthShortest        = tshort;
@@ -138,9 +147,13 @@ public class LimelightUtility {
     static private HttpCamera llFeed;
 
     static public void Stream(){
-        ShuffleboardTab tab = Shuffleboard.getTab("Driver Dashboard");
+        //ShuffleboardTab tab = Shuffleboard.getTab("Driver Dashboard");
         llFeed = new HttpCamera("limelight","http://10.48.59.11:5800/stream.mjpg",
             HttpCameraKind.kMJPGStreamer);
         CameraServer.startAutomaticCapture(llFeed);
+    }
+
+    static public void SetSmootherMS(int ms){
+        smoother.SetSampleMS(ms);
     }
 }

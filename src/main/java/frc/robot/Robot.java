@@ -64,6 +64,10 @@ public class Robot extends TimedRobot {
         LimelightUtility.StreamingMode(LimelightUtility.StreamMode.PIPMain);
         LimelightUtility.WriteDouble("ledMode", 1); // 3 = Limelight O
 
+        // Enable TA Smoothing
+        LimelightUtility.EnableTASmoothing = true;
+        LimelightUtility.SetSmootherMS(100);   // sample size is a tenth of a second.
+
 
         // 2022 - The robot needs to konw the current alliance color.   The following will read the alliance
         // color from the driver station which gets it from the Field Management System.   We use the color to 
