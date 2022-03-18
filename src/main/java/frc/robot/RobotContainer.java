@@ -162,17 +162,21 @@ final JoystickButton btnMagazineIn = new JoystickButton(operatorTwo, 11);
 btnMagazineIn.whileHeld(new manualMagazineDown() ,true);
     SmartDashboard.putData("btnMagazineIn",new manualMagazineDown() );
 
+final JoystickButton brnToggleAcquistion = new JoystickButton(operatorTwo, 12);        
+brnToggleAcquistion.whenPressed(new toggleAcquisition( m_ballAcquisition ) ,false);
+    SmartDashboard.putData("brnToggleAcquistion",new toggleAcquisition( m_ballAcquisition ) );
+
 final JoystickButton btnEnableLimelight = new JoystickButton(operatorTwo, 2);        
 btnEnableLimelight.whileHeld(new enableLimeLight( m_drive ) ,true);
     SmartDashboard.putData("btnEnableLimelight",new enableLimeLight( m_drive ) );
 
-final JoystickButton btnHardStopTest = new JoystickButton(operatorOne, 8);        
-btnHardStopTest.whileHeld(new ClimbHardStop( m_climb ) ,true);
-    SmartDashboard.putData("btnHardStopTest",new ClimbHardStop( m_climb ) );
-
 final JoystickButton btnGearShift = new JoystickButton(operatorOne, 10);        
 btnGearShift.whenPressed(new toggeGearShift( m_shifter ) ,true);
     SmartDashboard.putData("btnGearShift",new toggeGearShift( m_shifter ) );
+
+final JoystickButton btnHardStopTest = new JoystickButton(operatorOne, 8);        
+btnHardStopTest.whileHeld(new ClimbHardStop( m_climb ) ,true);
+    SmartDashboard.putData("btnHardStopTest",new ClimbHardStop( m_climb ) );
 
 final JoystickButton btnFlip = new JoystickButton(operatorOne, 12);        
 btnFlip.whenPressed(new flip( m_drive ) ,true);
@@ -181,10 +185,6 @@ btnFlip.whenPressed(new flip( m_drive ) ,true);
 final JoystickButton btnTogglePixyColor = new JoystickButton(operatorOne, 3);        
 btnTogglePixyColor.whenPressed(new togglePixyColor( m_drive ) ,true);
     SmartDashboard.putData("btnTogglePixyColor",new togglePixyColor( m_drive ) );
-
-final JoystickButton brnToggleAcquistion = new JoystickButton(operatorOne, 11);        
-brnToggleAcquistion.whenPressed(new toggleAcquisition( m_ballAcquisition ) ,false);
-    SmartDashboard.putData("brnToggleAcquistion",new toggleAcquisition( m_ballAcquisition ) );
 
 final JoystickButton btnAcquire = new JoystickButton(operatorOne, 1);        
 btnAcquire.whileHeld(new acquire( m_ballAcquisition ) ,false);
