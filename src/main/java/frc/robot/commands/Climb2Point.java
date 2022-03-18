@@ -95,7 +95,7 @@ public class Climb2Point extends CommandBase {
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return m_climb.leftArmShoulderMath(m_BarX, m_BarY) & m_climb.leftArmElbowMath(m_BarX, m_BarY);
+        return m_climb.leftArmShoulderMath(m_BarX, m_BarY) && m_climb.leftArmElbowMath(m_BarX, m_BarY);
     }
 
     @Override

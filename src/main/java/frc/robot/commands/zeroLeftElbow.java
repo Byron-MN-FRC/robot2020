@@ -54,7 +54,7 @@ public class zeroLeftElbow extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_climb.startLeftElbow(-.3);
+        m_climb.startLeftElbow(.3);
     }
 
     // Called once the command ends or is interrupted.
