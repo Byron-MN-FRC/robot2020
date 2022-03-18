@@ -73,7 +73,7 @@ topSensor = new DigitalInput(9);
         // 
         if (autoIndex){
             if (sensorTripped()){
-                startIndexer(-.5);
+                startIndexer(.5);
                 //System.out.println("Sensor Tripped");
             }else{
                 stopIndexer();
