@@ -55,7 +55,7 @@ public class Constants {
 
     public final static int kPigeonUnitsPerRotation = 8192;
 
-    public final static double kNeutralDeadband = 0.001;
+    public final static double kNeutralDeadband = 0.01;
 
     public final static int PID_PRIMARY = 0;
     public final static int PID_TURN = 1;
