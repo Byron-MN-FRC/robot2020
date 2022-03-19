@@ -192,6 +192,9 @@ shootMotor = new WPI_TalonFX(13);
     }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+    public void setMasterShootRPMS(double rpms) {
+        masterShootRPM = rpms;
+    }
     public void setMasterShootVelocity(double rpms) {
         if (rpms == 0) {
             shootMotor.set(ControlMode.PercentOutput, rpms);
@@ -212,7 +215,7 @@ shootMotor = new WPI_TalonFX(13);
      }
      public void idleSubsystems(){
       if (teleopWithIdle) {
-            masterShootRPM = 4000;
+            masterShootRPM = 0;
         } else {
             masterShootRPM = 0;
         }
