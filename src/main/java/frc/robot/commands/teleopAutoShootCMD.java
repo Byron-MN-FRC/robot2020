@@ -59,7 +59,8 @@ public class teleopAutoShootCMD extends CommandBase {
         // Calculate optimal RPMS based on area (if target seen)
         if (LimelightUtility.ValidTargetFound()) {
             area = LimelightUtility.TargetAreaPercentage * 100; 
-            rpms = area *-30 + 5800;
+            rpms = area *-26 + 5950;
+
             // rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
         } else {
             System.out.println("No target");
