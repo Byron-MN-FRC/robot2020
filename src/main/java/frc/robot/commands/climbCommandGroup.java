@@ -40,6 +40,8 @@ public class climbCommandGroup extends SequentialCommandGroup {
         //  );
         new zeroLeftShoulder(climb),
         new zeroLeftElbow(climb)
+        // new Climb2Point(5000, climb),
+        // new Climb2Point2(5000, climb)
         // new ClimbHardStop(climb),
        // new Climb2Point(3, 60, climb)
         // new climbToHook(climb),

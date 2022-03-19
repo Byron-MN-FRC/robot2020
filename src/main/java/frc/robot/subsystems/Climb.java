@@ -124,7 +124,48 @@ leftHardStop = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
         // This method will be called once per scheduler run when in simulation
 
     }
+    public void shoulderMove(){
+       
+            startLeftShoulder(.25);
+      
 
+    }
+    public void elbowMove(){
+        
+            startLeftElbow(.25);
+      
+       
+    }
+    public boolean shoulderEncodeTarget(double Encoders, boolean direction){
+        if (direction == true) {
+            if (Encoders >= leftShoulderEncoder.get()){
+                return true;
+            }else{
+                return false;
+            }
+        } else {
+            if (Encoders <= leftShoulderEncoder.get()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
+    public boolean elbowEncodeTarget(double Encoders, boolean direction){
+        if (direction == true) {
+            if (Encoders >= leftElbowEncoder.get()){
+                return true;
+            }else{
+                return false;
+            }
+        } else {
+            if (Encoders <= leftElbowEncoder.get()){
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     public boolean isLeftHand() {
@@ -133,6 +174,10 @@ leftHardStop = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
         } else {
             return false;
         }
+        
+// We're no strangers to love
+//You know the rules and so do I
+//A full commitment's what I'm thinking of
     }
     // public void leftArmMath(double BarX, double BarY) {
     //     ElbowAngle = leftElbowEncoder.get();
@@ -201,6 +246,12 @@ leftHardStop = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
         ShoulderAngle = rightShoulderEncoder.get()*Constants.encoderToDegree;
         return 180-(Math.asin((Math.sin(ElbowTarget)*Constants.forearmLength)/(Math.pow(BarX*BarX*BarY*BarY, .5))))-Math.atan(BarY/BarX);
     }
+    public double shoulderEncoder(){
+        return leftShoulderEncoder.get();
+    }
+    public double elbowEncoder(){
+        return leftElbowEncoder.get();
+    }
     public void startLeftElbow(double speed) {
         leftElbow.set(speed);
     }
@@ -268,13 +319,12 @@ leftHardStop = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
         // If moving toward limit switch & it is tripped stop,
         // but allow to go other direction
         double x = joystickP1.getX();
-        if (x > 0 && isLeftShoulder()) { x = 0; }
+        if (x > 0 && isLeftShoulder()||x<.02) { x = 0; }
         
         // If moving toward limit switch & it is tripped stop,
         // but allow to go other direction
         double y = -joystickP1.getY();
-        if (y > 0 && isLeftElbow()) { y = 0; }
-
+        if (y > 0 && isLeftElbow()||y<.02) { y = 0; }
         // Adjust speed allow drivers to use 
         // if (x > .9) {x=.9;}
         // if(x< -.9) {x=-.9;}
