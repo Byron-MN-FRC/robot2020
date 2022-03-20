@@ -75,7 +75,7 @@ public class Robot extends TimedRobot {
         
         SmartDashboard.putString("DriverDashboard/AllianceColor", DriverStation.getAlliance().name());
         LimelightUtility.Stream();
-        RobotContainer.getInstance().m_ballShooter.setMasterShootVelocity(0);
+        RobotContainer.getInstance().m_ballShooter.setMasterShootRPMS(0);
     }
 
     /**
@@ -108,7 +108,7 @@ public class Robot extends TimedRobot {
         LimelightUtility.EnableDriverCamera(false);
         RobotContainer.getInstance().m_ballIndexer.reinitializeIndexer();
         
-        // RobotContainer.getInstance().m_ballShooter.setMasterShootVelocity(0);
+        RobotContainer.getInstance().m_ballShooter.setMasterShootVelocity(0);
     }
 
     @Override
@@ -145,8 +145,7 @@ public class Robot extends TimedRobot {
             m_autonomousCommand.cancel();
         }
         LimelightUtility.WriteDouble("ledMode", 1);
-        RobotContainer.getInstance().m_ballShooter.setMasterShootVelocity(0);
-
+        RobotContainer.getInstance().m_ballShooter.teleopWithIdle =false;        
     }
 
     /**
