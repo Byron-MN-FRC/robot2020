@@ -162,7 +162,12 @@ leftFollower = new WPI_TalonFX(2);
         pigeon.getYawPitchRoll(ypr);
         return Math.abs(ypr[0] - target) < (360 * 0.005);
     }
-
+    public Double getPigeonPitch() {
+        double[] ypr = new double[3];
+        pigeon.getYawPitchRoll(ypr);
+        return ypr[2];
+        
+    }
     public void angleTurn(double angle) {
         rightMaster.set(ControlMode.MotionMagic, 0, DemandType.AuxPID, angle * 10);
         leftMaster.follow(rightMaster, FollowerType.AuxOutput1);
@@ -385,7 +390,7 @@ leftFollower = new WPI_TalonFX(2);
         rightMaster.getSensorCollection().setIntegratedSensorPosition(0, Constants.kTimeoutMs);
         pigeon.setYaw(0, Constants.kTimeoutMs);
         pigeon.setAccumZAngle(0, Constants.kTimeoutMs);
-
+        
     }
 
     public void flipDrive (boolean isflip) {

@@ -466,6 +466,17 @@
                 }
               ]
             }
+          },
+          "0,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///LiveWindow/Climb/LeftShoulderLimitSwitch/Value",
+              "_title": "Climb/LeftShoulderLimitSwitch/Value"
+            }
           }
         }
       }
@@ -542,9 +553,9 @@
     }
   ],
   "windowGeometry": {
-    "x": 12.800000190734863,
-    "y": 0.0,
-    "width": 1397.199951171875,
-    "height": 588.4000244140625
+    "x": -31.33333396911621,
+    "y": 43.33333206176758,
+    "width": 1297.3333740234375,
+    "height": 588.6666870117188
   }
 }

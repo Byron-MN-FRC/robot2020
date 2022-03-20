@@ -26,6 +26,7 @@ import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import frc.robot.RobotContainer;
 
 
 /**
@@ -114,7 +115,7 @@ leftHardStop = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
         SmartDashboard.putNumber("Left Shoulder Encoder", leftShoulderEncoder.get());
         SmartDashboard.putNumber("Left Elbow Encoder", leftElbowEncoder.get());
         SmartDashboard.putBoolean("Climb Mode", climbMode);
-
+        SmartDashboard.putNumber("Pigeon Pitch", RobotContainer.getInstance().m_drive.getPigeonPitch());
 
 
     }
@@ -319,12 +320,14 @@ leftHardStop = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
         // If moving toward limit switch & it is tripped stop,
         // but allow to go other direction
         double x = joystickP1.getX();
-        if (x > 0 && isLeftShoulder()||x<.02) { x = 0; }
-        
+        // if ((x > 0 && isLeftShoulder())||x<.02) { x = 0; }
+        if ((x > 0 && isLeftShoulder())) { x = 0; }
         // If moving toward limit switch & it is tripped stop,
         // but allow to go other direction
         double y = -joystickP1.getY();
-        if (y > 0 && isLeftElbow()||y<.02) { y = 0; }
+        if (y > 0 && isLeftElbow()) { y = 0; }
+        //stops elbow if it opens too far
+        if (((y < 0) && (elbowEncoder()) <= -0.411)){ y=0;} 
         // Adjust speed allow drivers to use 
         // if (x > .9) {x=.9;}
         // if(x< -.9) {x=-.9;}
@@ -336,6 +339,9 @@ leftHardStop = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 5, 4);
     }
     public void enableClimbMode(){
 
+    }
+    public void balanceWithPigeon(){
+        startLeftShoulder(RobotContainer.getInstance().m_drive.getPigeonPitch() / 90);
     }
 }
     

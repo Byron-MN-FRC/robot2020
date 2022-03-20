@@ -55,6 +55,7 @@ public class climbToHook extends CommandBase {
     @Override
     public void execute() {
         m_climb.startLeftElbow(-.3);
+        
     }
 
     // Called once the command ends or is interrupted.
