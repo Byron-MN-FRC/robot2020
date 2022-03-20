@@ -54,7 +54,8 @@ public class climbOnHook extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_climb.startLeftElbow(-.3);
+        m_climb.startLeftElbow(.3);
+        m_climb.balanceWithPigeon();
     }
 
     // Called once the command ends or is interrupted.
@@ -65,7 +66,7 @@ public class climbOnHook extends CommandBase {
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return false;
+        return m_climb.isLeftElbow();
     }
 
     @Override

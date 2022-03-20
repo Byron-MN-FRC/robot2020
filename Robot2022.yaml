@@ -252,7 +252,7 @@ Children:
           default: '0'
           name: Input Channel (Analog)
           validators: &id009 [AnalogInput]
-          value: '0'
+          value: '2'
       Base: Analog Input
       Name: LeftHandLimitSwitch
     - Children: []
@@ -272,7 +272,7 @@ Children:
           default: '0'
           name: Input Channel (Analog)
           validators: *id009
-          value: '2'
+          value: '0'
       Base: Analog Input
       Name: LeftShoulderLimitSwitch
     - Children: []
