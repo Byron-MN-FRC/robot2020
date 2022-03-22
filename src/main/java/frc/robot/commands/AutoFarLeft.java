@@ -34,10 +34,13 @@ public class AutoFarLeft extends SequentialCommandGroup {
     addCommands(
         // new enableLimeLight(m_Drive).withTimeout(1),
         // new teleopAutoShootCMD(m_ballShooter).withTimeout(5),
-        new driveForward(-5, m_Drive),
+        new shootRPMS(3200, m_ballShooter).withTimeout(2.5),
+        new turn(26, m_Drive),
+        new driveForward(-4.3, m_Drive),
         new toggleAcquisition(m_ballAcquisition),
         new acquire(m_ballAcquisition).withTimeout(2),
-        new shootRPMS(3400, m_ballShooter)
+        new turn(-23, m_Drive),
+        new shootRPMS(3400, m_ballShooter).withTimeout(2.5)
         // new turn(30, m_Drive),
         // new driveForward(2, m_Drive),
         //  new enableLimeLight(m_Drive).withTimeout(1),

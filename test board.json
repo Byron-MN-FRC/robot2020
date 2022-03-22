@@ -868,6 +868,28 @@
               "Layout/Label position": "BOTTOM",
               "_children": []
             }
+          },
+          "0,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/DriverDashboard/Speed",
+              "_title": "Speed"
+            }
+          },
+          "7,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/DriverDashboard/Turn",
+              "_title": "Turn"
+            }
           }
         }
       }
@@ -1085,6 +1107,41 @@
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/Left Elbow Encoder",
               "_title": "Elbow Encoder"
+            }
+          },
+          "7,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Command",
+              "_source0": "network_table:///SmartDashboard/limelightSafeEnable",
+              "_title": "/SmartDashboard/limelightSafeEnable"
+            }
+          },
+          "3,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Boolean Box",
+              "_source0": "network_table:///SmartDashboard/DriverDashboard/Pixy Chase Color",
+              "_title": "/SmartDashboard/DriverDashboard/Pixy Chase Color",
+              "Colors/Color when true": "#0000FFFF",
+              "Colors/Color when false": "#8B0000FF"
+            }
+          },
+          "4,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Command",
+              "_source0": "network_table:///SmartDashboard/btnTogglePixyColor",
+              "_title": "/SmartDashboard/btnTogglePixyColor"
             }
           }
         }

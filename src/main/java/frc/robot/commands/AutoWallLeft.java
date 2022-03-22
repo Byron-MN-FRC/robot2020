@@ -34,22 +34,44 @@ public class AutoWallLeft extends SequentialCommandGroup {
     addCommands(
         // new enableLimeLight(m_Drive).withTimeout(1),
         // new teleopAutoShootCMD(m_ballShooter).withTimeout(3.5),
-        new driveForward(-5, m_Drive),
-        new DeployAcquisitionAuto(m_ballAcquisition),
-        new AcquireAuto(m_ballAcquisition).withTimeout(2),
-        new turn(-20, m_Drive),
-        new shootRPMS(3400, m_ballShooter),
-        new turn(20, m_Drive),
-        // if ball gets bumped away while acquiring
-        // new toggleAcquisition(m_ballAcquisition),
+        // new driveForward(-5, m_Drive),
+        // new DeployAcquisitionAuto(m_ballAcquisition),
+        // new AcquireAuto(m_ballAcquisition).withTimeout(2),
+        // new turn(-20, m_Drive),
+        // new shootRPMS(3400, m_ballShooter),
+        // new turn(20, m_Drive),
+        // // if ball gets bumped away while acquiring
+        // // new toggleAcquisition(m_ballAcquisition),
+        // // new driveForward(-13, m_Drive),
+        // // new toggleAcquisition(m_ballAcquisition),
+        // // new AcquireAuto(m_ballAcquisition), 
+        // // new enableLimeLight(m_Drive).withTimeout(1),
+        // // new teleopAutoShootCMD(m_ballShooter).withTimeout(5)
         // new driveForward(-13, m_Drive),
-        // new toggleAcquisition(m_ballAcquisition),
-        // new AcquireAuto(m_ballAcquisition), 
-        // new enableLimeLight(m_Drive).withTimeout(1),
-        // new teleopAutoShootCMD(m_ballShooter).withTimeout(5)
-        new driveForward(-13, m_Drive),
-        new AcquireAuto(m_ballAcquisition),
-        new shootRPMS(5200, m_ballShooter)
+        // new AcquireAuto(m_ballAcquisition),
+        // new shootRPMS(5200, m_ballShooter)
+        //new driveForward(6000, m_Drive)
+       new shootRPMS(3300, m_ballShooter).withTimeout(2.5),
+        
+        // // new driveForward(.2, m_Drive),
+        // new AcquireAuto(m_ballAcquisition).withTimeout(4),
+        // // new AutoPixyDrive(m_Drive).withTimeout(3),
+        new turn(-20, m_Drive),
+        // new alexaFindBall(m_Drive).withTimeout(2.5),
+        
+        new driveForward(-4, m_Drive),
+        new DeployAcquisitionAuto(m_ballAcquisition),
+        //new AcquireAuto(m_ballAcquisition).withTimeout(6),
+        new acquire(m_ballAcquisition).withTimeout(2),
+        new turn(18, m_Drive),
+        new driveForward(-1, m_Drive),
+        
+        // new AutoPixyDrive(m_Drive),
+        
+        new shootRPMS(3900, m_ballShooter).withTimeout(3),
+        new turn(-15, m_Drive), 
+        new driveForward(-10, m_Drive)
+
         
     );
     }

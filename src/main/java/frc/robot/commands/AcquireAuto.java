@@ -50,7 +50,7 @@ public class AcquireAuto extends CommandBase {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-        System.out.println("Getting ball");
+        // System.out.println("Getting ball");
     }
 
     // Called every time the scheduler runs while the command is scheduled.
@@ -63,7 +63,7 @@ public class AcquireAuto extends CommandBase {
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        m_ballAcquisition.stopAquisitionMotor();
+        // m_ballAcquisition.stopAquisitionMotor();
         System.out.println("Ball Gotten");
     }
 
@@ -72,7 +72,8 @@ public class AcquireAuto extends CommandBase {
     public boolean isFinished() {
         System.out.println("bottom equals" + RobotContainer.getInstance().m_ballIndexer.isBottomSensor());
         System.out.println("Top equals" + RobotContainer.getInstance().m_ballIndexer.isTopsensor());
-        return RobotContainer.getInstance().m_ballIndexer.isBottomSensor() || RobotContainer.getInstance().m_ballIndexer.isTopsensor();
+        return  RobotContainer.getInstance().m_ballIndexer.isBottomSensor();
+        // return RobotContainer.getInstance().m_ballIndexer.isBottomSensor() || RobotContainer.getInstance().m_ballIndexer.isTopsensor();
     }
 
     @Override

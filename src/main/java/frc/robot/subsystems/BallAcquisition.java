@@ -79,6 +79,10 @@ acquisitionDeployer = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 7, 6)
         //System.out.println("Aquisition toggled");
         acquisitionDeployer.toggle();
     }
+    public void retractAcquisition(){
+        acquisitionDeployer.set(Value.kForward);
+    }
+
 
 
 }

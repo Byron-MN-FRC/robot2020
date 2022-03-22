@@ -152,7 +152,7 @@ leftFollower = new WPI_TalonFX(2);
     }
 
     public void closedLoopTurn(double angle) {
-        rightMaster.set(ControlMode.MotionMagic, 0, DemandType.AuxPID, -angle * 10);
+        rightMaster.set(ControlMode.MotionMagic, 0, DemandType.AuxPID, angle * 10);
         leftMaster.follow(rightMaster, FollowerType.AuxOutput1);
         System.out.println(pigeon.getYaw());
     }

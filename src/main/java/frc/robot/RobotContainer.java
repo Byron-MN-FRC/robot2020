@@ -167,7 +167,7 @@ btnMagazineOut.whileHeld(new runIndexer( m_ballIndexer ) ,true);
     SmartDashboard.putData("btnMagazineOut",new runIndexer( m_ballIndexer ) );
 
 final JoystickButton btnEnableClimbTwo = new JoystickButton(operatorTwo, 7);        
-btnEnableClimbTwo.toggleWhenPressed(new climbCommandGroup( m_climb ) ,true);
+btnEnableClimbTwo.whenPressed(new climbCommandGroup( m_climb ) ,true);
     SmartDashboard.putData("btnEnableClimbTwo",new climbCommandGroup( m_climb ) );
 
 final JoystickButton btnMagazineIn = new JoystickButton(operatorTwo, 11);        

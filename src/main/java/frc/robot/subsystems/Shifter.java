@@ -72,6 +72,9 @@ gearShifter.set(Value.kReverse);
         //highGear = !highGear;
     }
     public void shifterHigh(){
+        gearShifter.set(Value.kForward);
+    }
+    public void shifterLow(){
         gearShifter.set(Value.kReverse);
     }
 

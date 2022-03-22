@@ -59,6 +59,7 @@ public class shootRPMS extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
+        System.out.println("speed = "+m_rpmSpeed);
         if (m_ballShooter.ready2Shoot(m_rpmSpeed)) {
             if (!indexBeltRunner.isScheduled()) {
                 indexBeltRunner.schedule();
@@ -80,6 +81,7 @@ public class shootRPMS extends CommandBase {
             indexBeltRunner.cancel();
         }
         RobotContainer.getInstance().m_ballIndexer.setAutoIndex(true);   
+        m_ballShooter.setMasterShootRPMS(0);
     }
 
     // Returns true when the command should end.

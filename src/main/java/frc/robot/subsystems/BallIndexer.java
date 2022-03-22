@@ -82,8 +82,8 @@ topSensor = new DigitalInput(9);
             //startIndexer(-.7);
           //  System.out.println("Running Indexer");
         }
-        SmartDashboard.putBoolean("sensor bottom", bottomSensor.get());
-        SmartDashboard.putBoolean("sensor top", topSensor.get());
+        SmartDashboard.putBoolean("sensor bottom", isBottomSensor());
+        SmartDashboard.putBoolean("sensor top", isTopsensor());
     }
 
     @Override

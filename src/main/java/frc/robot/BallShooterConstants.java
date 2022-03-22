@@ -34,8 +34,8 @@ public class BallShooterConstants {
     /*
 	 * Gains(kp, ki, kd, kf, izone, peak output);
 	 */
-//	public static final Gains kGains_hoodMotor = new  Gains(0.7, 0.00001, 0.0, .14, 0, 0);
-	public static final Gains kGains_hoodMotor = new  Gains(0.9, 0.0002, 0.0, .99, 0, 0);
+
+	
 	// 10/9/21 public static final Gains kGains_hoodMotor = new  Gains(0.9, 0.00005, 0.0, .99, 0, 0);
 	//public static final Gains kGains_shootMotor = new Gains(0.149600029, 0.00001, 1.4956, 0.04760003, 500, 1.0);
 	// 9/16/21 public static final Gains kGains_shootMotor =   new Gains(0.149600029, 0.000015, 0, 0.049, 0, 0);

@@ -44,12 +44,17 @@ public class AutoFarRight extends SequentialCommandGroup {
         // new acquire(m_ballAcquisition),
         // new enableLimeLight(m_Drive).withTimeout(1),
         // new teleopAutoShootCMD(m_ballShooter).withTimeout(5)
-        new turn(-20, m_Drive),
-        new driveForward(-13, m_Drive),
+        new shootRPMS(3300, m_ballShooter).withTimeout(2.5),
+        new driveForward(-5.5, m_Drive),
+        new turn(42, m_Drive),
+
+       // new turn(29.2, m_Drive),
+        new driveForward(-14.6, m_Drive),
         new DeployAcquisitionAuto(m_ballAcquisition),
         new AcquireAuto(m_ballAcquisition).withTimeout(2),
-        new turn(20, m_Drive),
-        new shootRPMS(5200, m_ballShooter)
+        new driveForward(3, m_Drive),
+        new turn(-24, m_Drive)
+        // new shootRPMS(5500, m_ballShooter)
         );
     }
 
