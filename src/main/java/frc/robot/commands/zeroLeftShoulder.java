@@ -54,7 +54,7 @@ public class zeroLeftShoulder extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_climb.startLeftShoulder(0.4);
+        m_climb.startLeftShoulder(0.25);
         //System.out.println("aaaaaaa");
     }
 
@@ -69,7 +69,7 @@ public class zeroLeftShoulder extends CommandBase {
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return m_climb.isLeftShoulder();
+        return !m_climb.isLeftShoulder();
     }
 
     @Override

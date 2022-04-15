@@ -62,8 +62,9 @@ public class driveForward extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        double m_encoderUnits = Constants.encodeUnitsToFeet * m_distanceInFeet;
-        m_drive.driveToEncoderUnits(m_encoderUnits);
+        // double m_encoderUnits = Constants.encodeUnitsToFeet * m_distanceInFeet;
+        // m_drive.driveToEncoderUnits(m_encoderUnits);
+        m_drive.moveDrive();
         
     }
 

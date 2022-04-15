@@ -76,6 +76,7 @@ public class Robot extends TimedRobot {
         SmartDashboard.putString("DriverDashboard/AllianceColor", DriverStation.getAlliance().name());
         LimelightUtility.Stream();
         RobotContainer.getInstance().m_ballShooter.setMasterShootRPMS(0);
+        RobotContainer.getInstance().m_climb.setupClimbMotors();
     }
 
     /**
@@ -95,7 +96,8 @@ public class Robot extends TimedRobot {
         double IR = m_colorSensor.getIR();
 
         SmartDashboard.putNumber("IR", IR);
-        SmartDashboard.putBoolean("Climb Line", IR <= 6);
+        SmartDashboard.putBoolean("Climb Line", IR <= 8);
+
         
     }
 
@@ -147,7 +149,8 @@ public class Robot extends TimedRobot {
             m_autonomousCommand.cancel();
         }
         LimelightUtility.WriteDouble("ledMode", 1);
-        RobotContainer.getInstance().m_ballShooter.teleopWithIdle =false;        
+        RobotContainer.getInstance().m_ballShooter.teleopWithIdle =false;   
+        RobotContainer.getInstance().m_climb.manualClimbOff();
     }
 
     /**

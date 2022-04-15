@@ -113,6 +113,7 @@ leftFollower = new WPI_TalonFX(2);
         // This method will be called once per scheduler run
         SmartDashboard.putBoolean("DriverDashboard/Pixy Chase Color", this.chaseColor == 1);
         //SmartDashboard.putBoolean("Pixy Target Found ", (PixyCamera.getBiggestBlock(chaseColor)) !=null);
+        SmartDashboard.putNumber("PigeonYaw ", pigeon.getYaw());
     }
 
     @Override
@@ -401,6 +402,9 @@ leftFollower = new WPI_TalonFX(2);
             flip = 1;
         }
     }
-
+    public void moveDrive(){
+        leftMaster.set(.25);
+        rightMaster.set(.25);
+    }
     
 }
