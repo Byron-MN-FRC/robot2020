@@ -53,7 +53,7 @@ public class runManualClimb extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_climb.manualClimber(RobotContainer.getInstance().getoperatorTwo());
+        m_climb.manualClimber(RobotContainer.getInstance().getXboxController1());
     }
 
     // Called once the command ends or is interrupted.

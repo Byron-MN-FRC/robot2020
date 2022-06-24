@@ -79,7 +79,7 @@ SmartDashboard.putNumber("steerCorrect raw", steerCorrect);
             }
             SmartDashboard.putNumber("steerCorrect corrected", steerCorrect);
             
-            m_drive.JoystickDrive(RobotContainer.getInstance().getoperatorOne(),
+            m_drive.JoystickDrive(RobotContainer.getInstance().getXboxController1(),
                     steerCorrect);
         }
     }

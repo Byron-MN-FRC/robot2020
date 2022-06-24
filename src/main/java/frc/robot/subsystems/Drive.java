@@ -32,6 +32,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import com.ctre.phoenix.sensors.PigeonIMU_StatusFrame;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -123,9 +124,11 @@ leftFollower = new WPI_TalonFX(2);
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    public void JoystickDrive(Joystick joystickP0, double steerCorrection) {
-        double y = joystickP0.getY();
-        double twist = joystickP0.getZ();
+    public void JoystickDrive(XboxController xboxController, double steerCorrection) {
+        // double y = joystickP0.getY();
+        // double twist = joystickP0.getZ();
+        double leftY = xboxController.getLeftY();
+        double rightY = xboxController.getRightY();
         if (isFlipped) {
             flip = -1;
         } else {
@@ -133,13 +136,16 @@ leftFollower = new WPI_TalonFX(2);
         }
         // DifferentialDrive.arcadeDriveIK(Math.pow(y, 5), Math.pow(twist, 5), false);
 
-        if (steerCorrection == 0)
+        if (steerCorrection == 0){
             //differentialDrive.arcadeDrive(Math.pow(y, 3), Math.pow(twist, 5));
-            differentialDrive.arcadeDrive((y*flip), twist, true);
-        else
-            differentialDrive.arcadeDrive(y*flip, steerCorrection, true);
-    }
-
+            // differentialDrive.arcadeDrive((y*flip), twist, true);
+            leftMaster.set(leftY*.25);
+            rightMaster.set(rightY*.25);
+        }
+        // else{
+    //         // differentialDrive.arcadeDrive(y*flip, steerCorrection, true);
+    // }
+        }
 
     
     public void driveFroward() {

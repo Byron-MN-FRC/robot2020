@@ -70,7 +70,7 @@ public class alexaFindBall extends CommandBase {
                 targetPOS = -1.0 * (160.0 - mid_x);
             }
             steerCorrect = targetPOS / 160;
-            m_drive.JoystickDrive(RobotContainer.getInstance().getoperatorOne(), steerCorrect);
+            // m_drive.JoystickDrive(RobotContainer.getInstance().getoperatorOne(), steerCorrect);
         }
     }
 
