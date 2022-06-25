@@ -68,6 +68,8 @@ private WPI_TalonFX leftFollower;
     // private double steeringAdjustment = 0.0;
 
     private double flip = 1;
+    private boolean slowspeed = true;
+    
     /**
      * 
     *
@@ -136,7 +138,11 @@ leftFollower = new WPI_TalonFX(2);
 
         if (steerCorrection == 0)
             //differentialDrive.arcadeDrive(Math.pow(y, 3), Math.pow(twist, 5));
-            differentialDrive.arcadeDrive((y*flip), twist, true);
+            if (slowspeed == true) {
+                differentialDrive.arcadeDrive((y*flip*.5), twist*.5, true);
+            }
+            else {differentialDrive.arcadeDrive(y*flip, twist, true);}
+            
         else
             differentialDrive.arcadeDrive(y*flip, steerCorrection, true);
     }
@@ -406,5 +412,7 @@ leftFollower = new WPI_TalonFX(2);
         leftMaster.set(.25);
         rightMaster.set(.25);
     }
-    
+    public void slowspeedset() {
+        slowspeed = !slowspeed;
+    }
 }
