@@ -155,8 +155,8 @@ btnShootElswhere.whileHeld(new shootRPMS(4300, m_ballShooter) ,true);
     SmartDashboard.putData("btnShootElswhere",new shootRPMS(4300, m_ballShooter) );
 
 final JoystickButton btnShootTarmac = new JoystickButton(operatorOne, 1);        
-btnShootTarmac.whileHeld(new shootRPMS(2000, m_ballShooter) ,true);
-    SmartDashboard.putData("btnShootTarmac",new shootRPMS(1000, m_ballShooter) );
+btnShootTarmac.whileHeld(new shootRPMS(3500, m_ballShooter) ,true);
+    SmartDashboard.putData("btnShootTarmac",new shootRPMS(3500, m_ballShooter) );
 
 final JoystickButton btnDriverCamera = new JoystickButton(operatorTwo, 3);        
 btnDriverCamera.whileHeld(new cmdDriverCamera() ,true);

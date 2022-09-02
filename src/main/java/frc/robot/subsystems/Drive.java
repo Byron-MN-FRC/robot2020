@@ -129,6 +129,8 @@ leftFollower = new WPI_TalonFX(2);
     public void JoystickDrive(Joystick joystickP0, double steerCorrection) {
         double y = joystickP0.getY();
         double twist = joystickP0.getZ();
+        // double y = 0;
+        // double twist = 0;
         if (isFlipped) {
             flip = -1;
         } else {
@@ -143,8 +145,8 @@ leftFollower = new WPI_TalonFX(2);
             }
             else {differentialDrive.arcadeDrive(y*flip, twist, true);}
             
-        else
-            differentialDrive.arcadeDrive(y*flip, steerCorrection, true);
+        // else
+            // differentialDrive.arcadeDrive(y*flip, steerCorrection, true);
     }
 
 

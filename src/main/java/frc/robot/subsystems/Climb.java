@@ -256,9 +256,9 @@ leftShoulderLimitSwitch = new DigitalInput(1);
         return leftElbowEncoder.get();
     }
     public void startLeftElbow(double speed) {
-        if ((speed>=0) && (!isLeftElbow())) {speed = 0;}
+      
         // if ((speed<=0) && (leftElbowEncoder.get() <= -.38)){speed=0;}
-        
+                
         leftElbow.set(speed);
     }
     public void startLeftShoulder(double speed) {
