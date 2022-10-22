@@ -107,6 +107,7 @@ leftShoulderLimitSwitch = new DigitalInput(1);
     addChild("leftElbowEncoder", leftElbowEncoder);
     leftShoulderEncoder = new DutyCycleEncoder(8);
     addChild("leftShoulderEncoder", leftShoulderEncoder);
+
     rightElbow = new CANSparkMax(13, MotorType.kBrushless);
     }
     public boolean climbMode = false;
@@ -261,7 +262,7 @@ leftShoulderLimitSwitch = new DigitalInput(1);
         return leftElbowEncoder.get();
     }
     public void startLeftElbow(double speed) {
-        if ((speed>=0) && (!isLeftElbow())) {speed = 0;}
+        // if ((speed>=0) && (!isLeftElbow())) {speed = 0;}
         // if ((speed<=0) && (leftElbowEncoder.get() <= -.38)){speed=0;}
         
         leftElbow.set(speed);
@@ -329,10 +330,7 @@ leftShoulderLimitSwitch = new DigitalInput(1);
     public void toggleStop() {
         leftHardStop.toggle();
     }
-    public void manualClimber(Joystick joystickP1){
-
-        
-        
+    public void manualClimber(Joystick joystickP1){    
         if (climbMode){
 
         // if (joystickP1.getPOV() != -1){
@@ -358,8 +356,15 @@ leftShoulderLimitSwitch = new DigitalInput(1);
         // if(y< -.4) {y=-.4;}
         startLeftElbow(y);
         startLeftShoulder(x);
+        
         }
-        else{
+        else if (joystickP1.getPOV()==0){
+            startRightElbow(.4);
+        }
+        else if (joystickP1.getPOV()==180){
+            startRightElbow(-.4);
+        }
+        else {
             startLeftElbow(0);
             startLeftShoulder(0);
         }
@@ -378,6 +383,18 @@ leftShoulderLimitSwitch = new DigitalInput(1);
     }
     public void manualClimbOff(){
         climbMode=false;
+    }
+    public void povClimb(boolean inverse){
+        double direction = 0;
+        if (climbMode) {
+         if (inverse){
+             direction = -1;
+         }else{
+                direction = 1;
+            }
+        }
+        
+        rightElbow.set(.5*direction);
     }
 }
     
