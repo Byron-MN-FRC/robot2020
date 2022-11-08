@@ -25,10 +25,8 @@ import frc.robot.commands.AutoPixyDrive;
 import frc.robot.commands.AutoFarLeft;
 import frc.robot.commands.AutoWallLeft;
 import frc.robot.commands.AutoWallRight;
-import frc.robot.commands.ClimbHardStop;
 import frc.robot.commands.acquire;
 import frc.robot.commands.alexaFindBall;
-import frc.robot.commands.climbCommandGroup;
 import frc.robot.commands.cmdDriverCamera;
 import frc.robot.commands.doNothing;
 import frc.robot.commands.driveWithJoystick;
@@ -97,7 +95,6 @@ private final Joystick operatorOne = new Joystick(0);
     SmartDashboard.putData("manualMagazineDown", new manualMagazineDown( m_ballIndexer ));
     SmartDashboard.putData("enableLimeLight", new enableLimeLight( m_drive ));
     SmartDashboard.putData("togglePixyColor", new togglePixyColor( m_drive ));
-    SmartDashboard.putData("climbCommandGroup", new climbCommandGroup( m_climb ));
     SmartDashboard.putData("AutoPixyDrive", new AutoPixyDrive( m_drive ));
     SmartDashboard.putData("toggeGearShift", new toggeGearShift( m_shifter ));
     SmartDashboard.putData("limelightSafeEnable", new limelightSafeEnable());
@@ -166,10 +163,6 @@ final JoystickButton btnMagazineOut = new JoystickButton(operatorTwo, 9);
 btnMagazineOut.whileHeld(new runIndexer( m_ballIndexer ) ,true);
     SmartDashboard.putData("btnMagazineOut",new runIndexer( m_ballIndexer ) );
 
-final JoystickButton btnEnableClimbTwo = new JoystickButton(operatorTwo, 7);        
-btnEnableClimbTwo.whenPressed(new climbCommandGroup( m_climb ) ,true);
-    SmartDashboard.putData("btnEnableClimbTwo",new climbCommandGroup( m_climb ) );
-
 final JoystickButton btnMagazineIn = new JoystickButton(operatorTwo, 11);        
 btnMagazineIn.whileHeld(new manualMagazineDown( m_ballIndexer ) ,true);
     SmartDashboard.putData("btnMagazineIn",new manualMagazineDown( m_ballIndexer ) );
@@ -177,10 +170,6 @@ btnMagazineIn.whileHeld(new manualMagazineDown( m_ballIndexer ) ,true);
 final JoystickButton btnEnableLimelight = new JoystickButton(operatorTwo, 2);        
 btnEnableLimelight.whileHeld(new enableLimeLight( m_drive ) ,true);
     SmartDashboard.putData("btnEnableLimelight",new enableLimeLight( m_drive ) );
-
-final JoystickButton btnHardStopTest = new JoystickButton(operatorOne, 8);        
-btnHardStopTest.whileHeld(new ClimbHardStop( m_climb ) ,true);
-    SmartDashboard.putData("btnHardStopTest",new ClimbHardStop( m_climb ) );
 
 final JoystickButton btnGearShift = new JoystickButton(operatorOne, 10);        
 btnGearShift.whenPressed(new toggeGearShift( m_shifter ) ,true);

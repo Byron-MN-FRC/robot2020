@@ -72,13 +72,12 @@ public class povClimbing extends CommandBase {
     @Override
     public void end(boolean interrupted) {
         m_climb.stopLeftElbow();
-        m_climb.zeroLeftElbowEncoder();
     }
 
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return !m_climb.isLeftElbow();
+        return false;
     }
 
     @Override

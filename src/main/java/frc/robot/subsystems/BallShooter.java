@@ -49,7 +49,7 @@ private WPI_TalonFX shootMotor;
         BallShooterConstants.kEnableCurrentLimiting_BS, BallShooterConstants.currentLimit,
         BallShooterConstants.thresholdLimit, BallShooterConstants.thresholdTime);
     private double masterShootRPM = 0;
-    public boolean teleopWithIdle = false;
+    public boolean teleopWithIdle = true;
     private Integer currentCycle = 0;
     private double averagedLimelight = 0;
     private Integer ooga = 0;
@@ -215,7 +215,7 @@ shootMotor = new WPI_TalonFX(21);
      }
      public void idleSubsystems(){
       if (teleopWithIdle) {
-            masterShootRPM = 0;
+            masterShootRPM = 3200;
         } else {
             masterShootRPM = 0;
         }

@@ -54,7 +54,7 @@ public class Robot extends TimedRobot {
     
         m_robotContainer = RobotContainer.getInstance();
         HAL.report(tResourceType.kResourceType_Framework, tInstances.kFramework_RobotBuilder);
-        m_robotContainer.m_climb.retractHardStop();
+        
         server = CameraServer.getInstance();
 
         // server = CameraServer.getInstance();
@@ -93,10 +93,10 @@ public class Robot extends TimedRobot {
         // and running subsystem periodic() methods.  This must be called from the robot's periodic
         // block in order for anything in the Command-based framework to work.
         CommandScheduler.getInstance().run();
-        double IR = m_colorSensor.getIR();
+        // double IR = m_colorSensor.getIR();
 
-        SmartDashboard.putNumber("IR", IR);
-        SmartDashboard.putBoolean("Climb Line", IR <= 8);
+        // SmartDashboard.putNumber("IR", IR);
+        // SmartDashboard.putBoolean("Climb Line", IR <= 8);
 
         
     }
@@ -149,7 +149,7 @@ public class Robot extends TimedRobot {
             m_autonomousCommand.cancel();
         }
         LimelightUtility.WriteDouble("ledMode", 1);
-        RobotContainer.getInstance().m_ballShooter.teleopWithIdle =false;   
+        RobotContainer.getInstance().m_ballShooter.teleopWithIdle = true;   
         RobotContainer.getInstance().m_climb.manualClimbOff();
     }
 
