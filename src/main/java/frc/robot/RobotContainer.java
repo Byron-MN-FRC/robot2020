@@ -184,7 +184,7 @@ btnTogglePixyColor.whenPressed(new togglePixyColor( m_drive ) ,true);
     SmartDashboard.putData("btnTogglePixyColor",new togglePixyColor( m_drive ) );
 
 final JoystickButton brnToggleAcquistion = new JoystickButton(operatorOne, 11);        
-brnToggleAcquistion.whenPressed(new toggleAcquisition( m_ballAcquisition ) ,false);
+brnToggleAcquistion.whileHeld(new toggleAcquisition( m_ballAcquisition ) ,false);
     SmartDashboard.putData("brnToggleAcquistion",new toggleAcquisition( m_ballAcquisition ) );
 
 final JoystickButton btnAcquire = new JoystickButton(operatorOne, 1);        
