@@ -239,7 +239,9 @@ shootMotor = new WPI_TalonFX(21);
 
     public void setDefaultCommand(idleShooter idleShooter) {
     }
-    
+    public void runShootingMotor(){
+        shootMotor.set(ControlMode.Velocity, 3200);
+    }
      
 }
 
