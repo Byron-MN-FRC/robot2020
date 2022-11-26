@@ -83,6 +83,10 @@ acquisitionDeployer = new DoubleSolenoid(10, PneumaticsModuleType.CTREPCM, 7, 6)
         acquisitionDeployer.set(Value.kForward);
     }
 
+    public void extendAcquisition(){
+        acquisitionDeployer.set(Value.kReverse);
+    }
+
 
 
 }

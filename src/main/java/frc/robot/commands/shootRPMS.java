@@ -71,6 +71,7 @@ public class shootRPMS extends CommandBase {
                 indexBeltRunner.cancel();   
             }
        }
+       m_ballShooter.setMasterShootVelocity(m_rpmSpeed);
     }
 
     // Called once the command ends or is interrupted.
